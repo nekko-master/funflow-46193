@@ -1,0 +1,2 @@
+class PlanStep < ApplicationRecord
+end
