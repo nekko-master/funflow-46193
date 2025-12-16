@@ -1,0 +1,18 @@
+<h1>プラン詳細</h1>
+
+<p>
+  <strong>日付：</strong>
+  <%= @plan.date %>
+</p>
+
+<p>
+  <strong>パーク：</strong>
+  <%= @plan.park.name %>
+</p>
+
+<p>
+  <strong>作成者：</strong>
+  <%= @plan.user.nickname %>
+</p>
+
+<%= link_to "一覧に戻る", plans_path %>

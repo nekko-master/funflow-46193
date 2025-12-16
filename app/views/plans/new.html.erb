@@ -1,0 +1,5 @@
+<%= form_with model: @plan do |f| %>
+  <%= f.collection_select :park_id, Park.all, :id, :name %>
+  <%= f.date_field :date %>
+  <%= f.submit "プラン作成" %>
+<% end %>
