@@ -1,3 +1,17 @@
+<h1>FunFlow</h1>
+
+<% if user_signed_in? %>
+  <p>こんにちは、<%= current_user.nickname %>さん</p>
+  <%= link_to 'プランを作成する', new_plan_path %>
+  <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete } %>
+<% else %>
+  <%= link_to '新規登録', new_user_registration_path %>
+  <%= link_to 'ログイン', new_user_session_path %>
+<% end %>
+
+
+
+<%# <br>
 4/26 ディズニーシー<br>
 ★アプリ操作<br>
 ☆入園後☆<br>
@@ -17,4 +31,4 @@ PP取得 レイジングスピリッツ<br>
 12:30 アナ雪<br>
 BBB<br>
 19:15-19:45 ビリーブ<br>
-20:00 ラプンツェル<br>
+20:00 ラプンツェル<br> %>
