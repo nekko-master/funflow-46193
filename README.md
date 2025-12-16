@@ -26,7 +26,7 @@
 | ------------------ | ------- | -------------------------|
 | plan_id            | integer | null: false              |
 | step_number        | integer | null: false              | # 行動の順番
-| action_type        | integer | null: false              | # アトラクションに乗る,ショーを見る,食事,DPA取得など（ActiveHash）
+| action_type_id     | integer | null: false              | # アトラクションに乗る,ショーを見る,食事,DPA取得など（ActiveHash）
 | target_id          | integer | null: false              | # Attraction, Show, Parade, Restaurant のID（ActiveHash）
 | time               | time    |                          | # 実施時刻（任意）
 | note               | text    |                          | # 調整メモ（任意）

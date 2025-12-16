@@ -8,7 +8,7 @@ development:
   username: root
   password:
   host: localhost
-  database: funflow_4619_development
+  database: funflow_46193_development
 
 test:
   <<: *default
@@ -16,7 +16,7 @@ test:
   username: root
   password:
   host: localhost
-  database: funflow_4619_test
+  database: funflow_46193_test
 
 production:
   <<: *default
