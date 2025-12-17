@@ -3,6 +3,19 @@
 <% if user_signed_in? %>
   <p>こんにちは、<%= current_user.nickname %>さん</p>
   <%= link_to 'プランを作成する', new_plan_path %>
+  <ul>
+  <% if @plans.any? %>
+    <% @plans.each do |plan| %>
+      <li>
+        <%= link_to plan.date, plan_path(plan) %>
+        （<%= plan.park.name %>）
+      </li>
+    <% end %>
+
+  <% else %>
+    作成されたプランはありません
+  <% end %>
+  </ul>
   <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete } %>
 <% else %>
   <%= link_to '新規登録', new_user_registration_path %>

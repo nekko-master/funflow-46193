@@ -2,7 +2,7 @@ class PlansController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @plans = current_user.plans
+    @plans = current_user.plans.order(date: :asc)
   end
 
   def new
