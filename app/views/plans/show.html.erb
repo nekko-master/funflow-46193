@@ -16,3 +16,24 @@
 </p>
 
 <%= link_to "一覧に戻る", plans_path %>
+
+<h2>行動ステップ</h2>
+
+<% if @plan.plan_steps.any? %>
+  <ul>
+    <% @plan.plan_steps.order(:step_number).each do |step| %>
+      <li>
+        <%= step.step_number %>.
+        <%= step.action_type.name %> /
+        <%= step.target.name %>
+        <% if step.time.present? %>
+          （<%= step.time.strftime("%H:%M") %>）
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>まだ行動が登録されていません</p>
+<% end %>
+
+<%= link_to "行動を追加", new_plan_plan_step_path(@plan) %>

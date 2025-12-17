@@ -1,0 +1,30 @@
+<h2>行動を追加</h2>
+
+<%= form_with model: [@plan, @plan_step], local: true do |f| %>
+  <div>
+    <%= f.label :step_number, "順番" %>
+    <%= f.number_field :step_number %>
+  </div>
+
+  <div>
+    <%= f.label :action_type_id, "行動タイプ" %>
+    <%= f.collection_select :action_type_id, ActionType.all, :id, :name %>
+  </div>
+
+  <div>
+    <%= f.label :target_id, "対象" %>
+    <%= f.collection_select :target_id, Target.all, :id, :name %>
+  </div>
+
+  <div>
+    <%= f.label :time, "時間" %>
+    <%= f.time_field :time %>
+  </div>
+
+  <div>
+    <%= f.label :note, "メモ" %>
+    <%= f.text_area :note %>
+  </div>
+
+  <%= f.submit "追加する" %>
+<% end %>
