@@ -2,10 +2,16 @@ class DiagnosisService
   PATTERNS = {
     #1
     "attraction_early_buy_yes" => {
-      dpa_attraction: "アナとエルサのフローズンジャーニー",
+      dpa_attraction:{
+        name: "アナとエルサのフローズンジャーニー",
+        memo: nil
+      },
       dpa_show: "ビリーブ！～シー・オブ・ドリームス～",
       first: "センター・オブ・ジ・アース",
-      pp: "レイジングスピリッツ",
+      pp:{
+        name: "レイジングスピリッツ",
+        memo: nil
+      },
       lunch:{
         name: "スナグリーダックリング",
         time: "10:30-11:00",
@@ -19,10 +25,16 @@ class DiagnosisService
     },
     #2
     "attraction_early_buy_no" => {
-      dpa_attraction: "アナとエルサのフローズンジャーニー",
+      dpa_attraction:{
+        name: "アナとエルサのフローズンジャーニー",
+        memo: nil
+      },
       dpa_show: "ビリーブ！～シー・オブ・ドリームス～",
       first: "スカットルのスクーター",
-      pp: "ニモ＆フレンズ・シーライダー",
+      pp:{
+        name: "ニモ＆フレンズ・シーライダー",
+        memo: nil
+      },
       lunch:{
         name: "スナグリーダックリング",
         time: "10:30-11:00",
@@ -36,6 +48,11 @@ class DiagnosisService
     },
     #3
     "attraction_early_no_buy_yes" => {
+      dpa_attraction:{
+        name: nil,
+        memo: nil
+      },
+      dpa_show: nil,
       first: "センター・オブ・ジ・アース",
       pp: "レイジングスピリッツ",
       lunch:{
@@ -51,6 +68,11 @@ class DiagnosisService
     },
     #4
     "attraction_early_no_buy_no" => {
+      dpa_attraction:{
+        name: nil,
+        memo: nil
+      },
+      dpa_show: nil,
       first: "スカットルのスクーター",
       pp: "ニモ＆フレンズ・シーライダー",
       lunch:{
@@ -96,7 +118,10 @@ class DiagnosisService
       },
       dpa_show: "ビリーブ！～シー・オブ・ドリームス～",
       first: "スカットルのスクーター",
-      pp: "ニモ＆フレンズ・シーライダー",
+      pp:{
+        name:  "ニモ＆フレンズ・シーライダー",
+        memo: nil
+      },
       lunch:{
         name: "セバスチャンのカプリソキッチン",
         time: "10:30-11:00",
@@ -110,6 +135,11 @@ class DiagnosisService
     },
     #7
     "attraction_normal_no_buy_yes" => {
+      dpa_attraction:{
+        name: nil,
+        memo: nil
+      },
+      dpa_show: nil,
       first: "スカットルのスクーター",
       pp:{
         name: "レイジングスピリッツ",
@@ -128,8 +158,16 @@ class DiagnosisService
     },
     #8
     "attraction_normal_no_buy_no" => {
+      dpa_attraction:{
+        name: nil,
+        memo: nil
+      },
+      dpa_show: nil,
       first: "スカットルのスクーター",
-      pp: "ニモ＆フレンズ・シーライダー",
+      pp:{
+        name: "ニモ＆フレンズ・シーライダー",
+        memo: nil
+      },
       lunch:{
         name: "セバスチャンのカプリソキッチン",
         time: "10:30-11:00",
@@ -144,10 +182,16 @@ class DiagnosisService
 
     #9
     "show_early_buy_yes" => {
-      dpa_attraction: "アナとエルサのフローズンジャーニー",
+      dpa_attraction:{
+        name: "アナとエルサのフローズンジャーニー",
+        memo: nil
+      },
       dpa_show: "ビリーブ！～シー・オブ・ドリームス～",
       first: "センター・オブ・ジ・アース",
-      pp: "レイジングスピリッツ",
+      pp:{
+        name: "レイジングスピリッツ",
+        memo: nil
+      },
       lunch:{
         name: "ニューヨーク・デリ",
         time: "10:00頃",
@@ -161,10 +205,16 @@ class DiagnosisService
     },
     #10
     "show_early_buy_no" => {
-      dpa_attraction: "アナとエルサのフローズンジャーニー",
+      dpa_attraction:{
+        name: "アナとエルサのフローズンジャーニー",
+        memo: nil
+      },
       dpa_show: "ビリーブ！～シー・オブ・ドリームス～",
       first: "スカットルのスクーター",
-      pp: "ニモ＆フレンズ・シーライダー",
+      pp:{
+        name: "ニモ＆フレンズ・シーライダー",
+        memo: nil
+      },
       lunch:{
         name: "ニューヨーク・デリ",
         time: "10:00頃",
@@ -178,8 +228,16 @@ class DiagnosisService
     },
     #11
     "show_early_no_buy_yes" => {
+      dpa_attraction:{
+        name: nil,
+        memo: nil
+      },
+      dpa_show: nil,
       first: "センター・オブ・ジ・アース",
-      pp: "レイジングスピリッツ",
+      pp:{
+        name: "レイジングスピリッツ",
+        memo: nil
+      },
       lunch:{
         name: "ニューヨーク・デリ",
         time: "10:00頃",
@@ -193,8 +251,16 @@ class DiagnosisService
     },
     #12
     "show_early_no_buy_no" => {
+      dpa_attraction:{
+        name: nil,
+        memo: nil
+      },
+      dpa_show: nil,
       first: "スカットルのスクーター",
-      pp: "ニモ＆フレンズ・シーライダー",
+      pp:{
+        name: "ニモ＆フレンズ・シーライダー",
+        memo: nil
+      },
       lunch:{
         name: "ニューヨーク・デリ",
         time: "10:00頃",
@@ -238,7 +304,10 @@ class DiagnosisService
       },
       dpa_show: "ビリーブ！～シー・オブ・ドリームス～",
       first: "スカットルのスクーター",
-      pp: "ニモ＆フレンズ・シーライダー",
+      pp:{
+        name: "ニモ＆フレンズ・シーライダー",
+        memo: nil
+      },
       lunch:{
         name: "ニューヨーク・デリ",
         time: "10:00頃",
@@ -252,6 +321,11 @@ class DiagnosisService
     },
     #15
     "show_normal_no_buy_yes" => {
+      dpa_attraction:{
+        name: nil,
+        memo: nil
+      },
+      dpa_show: nil,
       first: "スカットルのスクーター",
       pp:{
         name: "レイジングスピリッツ",
@@ -270,6 +344,11 @@ class DiagnosisService
     },
     #16
     "show_normal_no_buy_no" => {
+      dpa_attraction:{
+        name: nil,
+        memo: nil
+      },
+      dpa_show: nil,
       first: "スカットルのスクーター",
       pp: "ニモ＆フレンズ・シーライダー",
       lunch:{

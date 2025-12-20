@@ -1,0 +1,29 @@
+<%= form_with url: diagnoses_path, method: :post, data: { turbo: false } do |f| %>
+  <p>重視するのは？</p>
+  <%= f.radio_button :focus, "attraction" %> アトラクション
+  <%= f.radio_button :focus, "show" %> ショー
+
+  <p>朝の過ごし方は？</p>
+  <%= f.radio_button :morning, "early" %> できるだけ早く開園待ちする（6:00~7:00舞浜駅到着）
+  <%= f.radio_button :morning, "normal" %> 並ばずに入園したい（9:30頃舞浜駅到着）
+
+  <p>DPA（有料パス）は？</p>
+  <%= f.radio_button :dpa, "buy" %> 買う
+  <%= f.radio_button :dpa, "no_buy" %> 買わない
+
+  <p>絶叫アトラクションは？</p>
+  <%= f.radio_button :thrill, "yes" %> 乗る
+  <%= f.radio_button :thrill, "no" %> 乗らない
+
+  <%= f.submit "診断する" %>
+<% end %>
+
+<%# <%= f.label :focus_attraction do %>
+  <%# <%= f.radio_button :focus, "attraction" %>
+  <%# アトラクション
+<% end %> 
+
+<%# <%= f.label :focus_show do %>
+  <%# <%= f.radio_button :focus, "show" %>
+  <%# ショー
+<% end  %>

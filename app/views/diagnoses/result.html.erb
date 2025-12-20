@@ -1,0 +1,76 @@
+<%#= @result.inspect %>
+<%# @result の中に :dpa_attraction が存在していて、かつ nil や false でなければ表示する %>
+
+<% if @result[:dpa_attraction] %>
+  <p>
+    DPA（アトラクション）：
+    <%= @result[:dpa_attraction][:name] %>
+  </p>
+
+  <% if @result[:dpa_attraction][:memo] %>
+    <p>※ <%= @result[:dpa_attraction][:memo] %></p>
+  <% end %>
+<% end %>
+
+<% if @result[:dpa_show] %>
+  <p>
+    DPA（ショー/パレード）：
+    <%= @result[:dpa_show] %>
+  </p>
+<% end %>
+
+<% if @result[:first] %>
+  <p>
+    最初に並ぶアトラクション：
+    <%= @result[:first] %>
+  </p>
+<% end %>
+
+<% if @result[:pp] %>
+  <p>
+    PP（アトラクション）：
+    <%= @result[:pp][:name] %>
+  </p>
+
+  <% if @result[:pp][:memo] %>
+    <p>※ <%= @result[:pp][:memo] %></p>
+  <% end %>
+<% end %>
+
+<% if @result[:lunch] %>
+  <p>
+    昼食：
+    <%= @result[:lunch][:name] %>
+  </p>
+
+  <% if @result[:lunch][:time] %>
+    <p>
+      <%= @result[:lunch][:time] %>
+      時頃
+    </p>
+  <% end %>
+
+  <% if @result[:lunch][:memo] %>
+    <p>※ <%= @result[:lunch][:memo] %></p>
+  <% end %>
+
+<% end %>
+
+<% if @result[:dinner] %>
+  <p>
+    昼食：
+    <%= @result[:dinner][:name] %>
+  </p>
+
+  <% if @result[:dinner][:time] %>
+    <p>
+      <%= @result[:dinner][:time] %>
+      時頃
+    </p>
+  <% end %>
+
+  <% if @result[:dinner][:memo] %>
+    <p>※ <%= @result[:dinner][:memo] %></p>
+  <% end %>
+
+<% end %>

@@ -4,4 +4,5 @@ Rails.application.routes.draw do
     resources :plan_steps, only: [:new, :create]
   end
   root to: "plans#index"
+  resources :diagnoses, only: [:new, :create]
 end
