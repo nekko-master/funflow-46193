@@ -1,8 +1,11 @@
 class DiagnosesController < ApplicationController
   def new
+    @plan = Plan.find(params[:plan_id])
   end
 
   def create
+    @plan = Plan.find(params[:plan_id])
+    
     @result = DiagnosisService.call(
       focus: params[:focus],
       morning: params[:morning],

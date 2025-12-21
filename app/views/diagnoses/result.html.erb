@@ -1,4 +1,4 @@
-<%#= @result.inspect %>
+<%= @result.inspect %>
 <%# @result の中に :dpa_attraction が存在していて、かつ nil や false でなければ表示する %>
 
 <% if @result[:dpa_attraction] %>
@@ -73,4 +73,11 @@
     <p>※ <%= @result[:dinner][:memo] %></p>
   <% end %>
 
+<% end %>
+
+
+<%= form_with model: [@plan, PlanStep.new], local: true do |f| %>
+  <%= hidden_field_tag :route_data, @result.to_json %>
+
+  <%= f.submit "このルートを保存" %>
 <% end %>
