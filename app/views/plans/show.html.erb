@@ -41,8 +41,11 @@
           （<%= step.note %>）
         <% end %>
 
+        <%= link_to "行動ステップを編集",
+                    edit_plan_plan_step_path(step.plan, step) %>
+
         <%= link_to "削除",
-            plan_plan_step_path(@plan, step),
+            plan_plan_step_path(step.plan, step),
             data: { turbo_method: :delete, turbo_confirm: "削除しますか？" } %>
       </li>
     <% end %>

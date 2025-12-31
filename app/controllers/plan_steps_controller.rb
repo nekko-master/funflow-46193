@@ -21,6 +21,22 @@ class PlanStepsController < ApplicationController
     redirect_to plan_path(@plan)
   end
 
+  def edit
+    @plan = Plan.find(params[:plan_id])
+    @plan_step = @plan.plan_steps.find(params[:id])
+  end
+
+  def update
+    @plan = Plan.find(params[:plan_id])
+    @plan_step = @plan.plan_steps.find(params[:id])
+
+    if @plan_step.update(plan_step_params)
+      redirect_to plan_path(@plan), notice: "行動ステップを更新しました"
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
 
