@@ -19,6 +19,10 @@
 
 <%= link_to "一覧に戻る", plans_path %>
 
+<%= link_to "プランを削除",
+            plan_path(@plan),
+            data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } %>
+
 <h2>行動ステップ</h2>
 
 <% if @plan.plan_steps.any? %>
