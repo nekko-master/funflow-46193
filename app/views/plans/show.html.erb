@@ -40,6 +40,10 @@
         <% if step.note.present? %>
           （<%= step.note %>）
         <% end %>
+
+        <%= link_to "削除",
+            plan_plan_step_path(@plan, step),
+            data: { turbo_method: :delete, turbo_confirm: "削除しますか？" } %>
       </li>
     <% end %>
   </ul>

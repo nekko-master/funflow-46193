@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :plans do
-    resources :plan_steps, only: [:new, :create]
+    resources :plan_steps, only: [:new, :create, :destroy]
   end
   root to: "plans#index"
   resources :diagnoses, only: [:new, :create]
