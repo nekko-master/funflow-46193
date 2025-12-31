@@ -31,6 +31,9 @@
         <% if step.time.present? %>
           （<%= step.time.strftime("%H:%M") %>）
         <% end %>
+        <% if step.note.present? %>
+          （<%= step.note %>）
+        <% end %>
       </li>
     <% end %>
   </ul>

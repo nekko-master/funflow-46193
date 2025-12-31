@@ -12,7 +12,9 @@ class DiagnosesController < ApplicationController
       dpa: params[:dpa],
       thrill: params[:thrill]
     )
-    render :result
+    
+    RouteBuilder.new(@plan, @result).call
+    redirect_to plan_path(@plan)
   end
 
 
