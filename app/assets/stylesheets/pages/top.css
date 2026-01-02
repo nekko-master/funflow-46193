@@ -1,0 +1,132 @@
+/* ===============================
+   Top Page Layout
+================================ */
+
+.top-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* ===============================
+   Hero Section
+================================ */
+
+.hero {
+  margin-bottom: 64px;
+}
+
+.app-name {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.catch-copy {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.app-description {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* ===============================
+   User Section
+================================ */
+
+.user-section {
+  margin-bottom: 72px;
+}
+
+.greeting {
+  margin-bottom: 16px;
+}
+
+.primary-actions {
+  margin-bottom: 24px;
+}
+
+.primary-button {
+  display: inline-block;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.plans-section {
+  margin-top: 32px;
+}
+
+.plans-heading {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.plans-list {
+  list-style: none;
+  padding: 0;
+}
+
+.plan-item {
+  margin-bottom: 8px;
+}
+
+.secondary-actions {
+  margin-top: 24px;
+}
+
+/* ===============================
+   Story Section
+================================ */
+
+.story-section {
+  margin-bottom: 72px;
+}
+
+.section-title {
+  font-size: 22px;
+  margin-bottom: 24px;
+}
+
+.story-paragraph {
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.story-emphasis {
+  font-weight: bold;
+  margin: 24px 0;
+}
+
+.story-conclusion {
+  margin-top: 24px;
+}
+
+/* ===============================
+   Concept Section
+================================ */
+
+.concept-section {
+  margin-bottom: 72px;
+}
+
+.concept-steps {
+  list-style: none;
+  padding: 0;
+}
+
+.concept-step {
+  margin-bottom: 24px;
+}
+
+.concept-step-title {
+  font-weight: bold;
+}
+
+
+
+.hidden {
+  display: none;
+}

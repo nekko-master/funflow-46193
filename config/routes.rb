@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   resources :plans do
     resources :plan_steps, only: [:new, :create, :destroy, :edit, :update]
   end
-  root to: "plans#index"
+  
   resources :diagnoses, only: [:new, :create]
+
+  get "/about", to: "static_pages#about"
+
+  root to: "plans#index"
 end

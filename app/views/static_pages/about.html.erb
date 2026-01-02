@@ -1,0 +1,11 @@
+<h1>FunFlowとは</h1>
+
+<p>このページはアプリの説明ページです。</p>
+
+<% if user_signed_in? %>
+  <p>ログイン中：<%= current_user.nickname %>さん</p>
+<% else %>
+  <p>ログインしていません</p>
+<% end %>
+
+<%= link_to "トップに戻る", root_path %>

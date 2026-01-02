@@ -1,111 +1,22 @@
-<h1>FunFlow</h1>
+<% if user_signed_in? && @plans.present? %>
+  <div data-controller="plan-list">
 
-<h1>「ちゃんと楽しむための、段取り。」</h1>
+    <button type="button"
+            class="secondary-button"
+            data-action="click->plan-list#toggle">
+      作成したプランを見る
+    </button>
 
-<p>
-FunFlowは、事前に行動の流れを整理することで、
-当日は迷わず、ゆっくり楽しめる状態をつくるアプリです。
-</p>
+    <div class="plans-wrapper hidden" data-plan-list-target="list">
+      <ul class="plans-list">
+        <% @plans.each do |plan| %>
+          <li class="plan-item">
+            <%= link_to plan.date, plan_path(plan), class: "plan-link" %>
+            <span class="plan-park">（<%= plan.park.name %>）</span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
 
-<% if user_signed_in? %>
-  <p>こんにちは、<%= current_user.nickname %>さん</p>
-  <%= link_to 'プランを作成する', new_plan_path %>
-  <ul>
-  <p>作成したプランを見る</p>
-  <% if @plans.any? %>
-    <% @plans.each do |plan| %>
-      <li>
-        <%= link_to plan.date, plan_path(plan) %>
-        （<%= plan.park.name %>）
-      </li>
-    <% end %>
-
-  <% else %>
-    作成されたプランはありません
-  <% end %>
-  </ul>
-  <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete } %>
-<% else %>
-  <%= link_to '新規登録', new_user_registration_path %>
-  <%= link_to 'ログイン', new_user_session_path %>
+  </div>
 <% end %>
-
-
-
-<h2>なぜFunFlowを作ったのか</h2>
-
-<p>
-最近、「楽しみにしているはずの予定なのに、<br>
-事前に考えることが多くて疲れてしまう」という声をよく聞きます。
-</p>
-
-<p>
-ディズニーリゾートもその一つです。<br>
-アプリでのパス取得や事前準備が必要になり、<br>
-「難しそう」「大変そう」と感じる人が増えました。
-</p>
-
-<p>
-しかし実際には、<br>
-やることの流れさえ整理できていれば、<br>
-以前よりもゆっくり、安心して楽しめると感じています。
-</p>
-
-<p>
-私はいつも、取得するパスや回り方を簡単なメモにまとめています。<br>
-そのメモがあるだけで、当日は迷わず行動でき、<br>
-一緒に行った人からも<br>
-「疲れなかった」「こんなにゆっくり過ごせたのは初めて」<br>
-と言ってもらえました。
-</p>
-
-<p>
-「効率よく回る」ためではなく、<br>
-「ちゃんと楽しむ」ための段取り。<br>
-</p>
-
-<p>
-その考え方を、誰でも使える形にしたのが FunFlow です。
-</p>
-
-<h2>FunFlowの考え方</h2>
-<ul>
-  <li>
-    <strong>① 状況を整理する（簡単診断）</strong><br>
-    今の目的や条件を整理し、やるべき方向性を明確にします。
-  </li>
-
-  <li>
-    <strong>② 行動の流れをつくる（プラン作成）</strong><br>
-    必要な行動を洗い出し、無理のない順番に並べます。
-  </li>
-
-  <li>
-    <strong>③ その日やることだけを見る（行動ステップ）</strong><br>
-    当日は迷わず、今やる行動に集中できます。
-  </li>
-</ul>
-
-
-
-<%# <br>
-4/26 ディズニーシー<br>
-★アプリ操作<br>
-☆入園後☆<br>
-アトラクションDPA取得 アナ雪 12:30くらい<br>
-PP取得 レイジングスピリッツ<br>
-パレードDPA取得 ビリーブ<br>
-
-☆空き時間で実施☆<br>
-ショーエントリー受付 BBB（時間はPP取得時間にかぶらないように調整）<br>
-モバイルオーダー ダックリンク（時間はPP取得時間にかぶらないように調整）<br>
-<br>
-★周り方イメージ<br>
-9:00 センター<br>
-10:00 ティンカーベル<br>
-◎ソアリンDPA取得<br>
-昼食（ダックリンク）<br>
-12:30 アナ雪<br>
-BBB<br>
-19:15-19:45 ビリーブ<br>
-20:00 ラプンツェル<br> %>

@@ -1,8 +1,10 @@
 class PlansController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index]
 
   def index
-    @plans = current_user.plans.order(date: :asc)
+    if user_signed_in?
+      @plans = current_user.plans.order(date: :asc)
+    end
   end
 
   def new
