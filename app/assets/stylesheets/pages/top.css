@@ -5,7 +5,7 @@
 .top-page {
   max-width: 960px;
   margin: 0 auto;
-  padding: 40px 24px;
+  padding: 0 24px 40px;
 }
 
 /* ===============================
@@ -13,47 +13,109 @@
 ================================ */
 
 .hero {
-  margin-bottom: 64px;
+  min-height: 70vh;
+  padding: 96px 24px;
+
+  background-image: url("hero_bg.jpg");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+
+.hero-content {
+  max-width: 640px;
+  margin-left: 8%;
+  margin-bottom: 48px;
+
+  padding: 32px 40px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
 }
 
 .app-name {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 16px;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1f2937;
 }
 
 .catch-copy {
-  font-size: 24px;
-  margin-bottom: 16px;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 24px;
+  color: #111827;
+
 }
 
 .app-description {
-  font-size: 16px;
-  line-height: 1.8;
+  color: #374151;
 }
 
 /* ===============================
    User Section
 ================================ */
 
-.user-section {
-  margin-bottom: 72px;
+.user-section-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .greeting {
-  margin-bottom: 16px;
+  font-size: 16px;
+  margin-bottom: 24px;
+  color: #444;
 }
+
+.user-actions,
+.auth-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.secondary-actions {
+  margin-top: 32px;
+}
+
+.primary-button {
+  padding: 14px 24px;
+  border-radius: 999px;
+
+  background: #2c6bed;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.secondary-button {
+  padding: 12px 24px;
+  border-radius: 999px;
+
+  background: #f2f4f8;
+  color: #333;
+  border: none;
+}
+
+.logout-link {
+  font-size: 14px;
+  color: #888;
+  text-decoration: underline;
+}
+
+
+
 
 .primary-actions {
   margin-bottom: 24px;
 }
 
-.primary-button {
-  display: inline-block;
-  padding: 12px 20px;
-  text-decoration: none;
-  border-radius: 6px;
-}
 
 .plans-section {
   margin-top: 32px;
@@ -73,60 +135,34 @@
   margin-bottom: 8px;
 }
 
-.secondary-actions {
-  margin-top: 24px;
-}
+
+
 
 /* ===============================
-   Story Section
+   Utility
 ================================ */
-
-.story-section {
-  margin-bottom: 72px;
-}
-
-.section-title {
-  font-size: 22px;
-  margin-bottom: 24px;
-}
-
-.story-paragraph {
-  margin-bottom: 16px;
-  line-height: 1.8;
-}
-
-.story-emphasis {
-  font-weight: bold;
-  margin: 24px 0;
-}
-
-.story-conclusion {
-  margin-top: 24px;
-}
-
-/* ===============================
-   Concept Section
-================================ */
-
-.concept-section {
-  margin-bottom: 72px;
-}
-
-.concept-steps {
-  list-style: none;
-  padding: 0;
-}
-
-.concept-step {
-  margin-bottom: 24px;
-}
-
-.concept-step-title {
-  font-weight: bold;
-}
-
-
 
 .hidden {
-  display: none;
+  opacity: 0;
+  transform: translateY(-5px);
+  pointer-events: none;
 }
+
+.plans-wrapper {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.plans-wrapper.hidden {
+  max-height: 0;
+  overflow: hidden;
+}
+
+
+/* ===============================
+   
+================================ */
+
+
+
