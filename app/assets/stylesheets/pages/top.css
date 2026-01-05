@@ -24,7 +24,6 @@
   align-items: flex-end;
 }
 
-
 .hero-content {
   max-width: 640px;
   margin-left: 8%;
@@ -50,16 +49,30 @@
   line-height: 1.4;
   margin-bottom: 24px;
   color: #111827;
-
 }
 
 .app-description {
+  font-size: 16px;
+  line-height: 1.7;
   color: #374151;
+}
+
+/* ===============================
+   Top Links
+================================ */
+
+.top-links {
+  text-align: center;
+  margin: 32px 0;
 }
 
 /* ===============================
    User Section
 ================================ */
+
+.user-section {
+  margin-top: 48px;
+}
 
 .user-section-inner {
   max-width: 640px;
@@ -73,6 +86,8 @@
   color: #444;
 }
 
+/* actions layout */
+
 .user-actions,
 .auth-actions {
   display: flex;
@@ -84,59 +99,140 @@
   margin-top: 32px;
 }
 
+/* ===============================
+   Buttons
+================================ */
+
+.primary-button,
+.secondary-button,
+.tertiary-button {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: background-color 0.2s ease,
+              box-shadow 0.2s ease,
+              transform 0.15s ease;
+}
+
+/* Primary */
+
 .primary-button {
   padding: 14px 24px;
+  background: #0377CB;
+  color: #ffffff;
   border-radius: 999px;
-
-  background: #2c6bed;
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
+
+.primary-button:hover {
+  background: #0266AD; /* 少し濃く */
+}
+
+.primary-button:focus-visible {
+  background: #025E9E;
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(3, 119, 203, 0.35);
+}
+
+/* Secondary */
 
 .secondary-button {
   padding: 12px 24px;
-  border-radius: 999px;
-
-  background: #f2f4f8;
+  background: #F3F6FA;
   color: #333;
-  border: none;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease,
+              border-color 0.2s ease,
+              box-shadow 0.2s ease;
 }
 
-.logout-link {
+.secondary-button:hover {
+  background: #E9EEF5;
+}
+
+.secondary-button:focus-visible {
+  background: #E9EEF5;
+  outline: none;
+  border-color: #0377CB;
+  box-shadow:
+    0 0 0 2px rgba(3, 119, 203, 0.25);
+}
+
+
+/* Tertiary */
+
+.tertiary-link {
+  color: #5F6C7B;
   font-size: 14px;
-  color: #888;
+  text-decoration: none;
+}
+
+.tertiary-link:hover {
+  color: #374151;
   text-decoration: underline;
 }
 
-
-
-
-.primary-actions {
-  margin-bottom: 24px;
+.tertiary-link:focus-visible {
+  outline: none;
+  text-decoration: underline;
 }
 
+/* Logout specific */
 
-.plans-section {
-  margin-top: 32px;
+.logout-link {
+  color: #9CA3AF; /* さらに弱く */
+  font-size: 13px;
 }
 
-.plans-heading {
-  font-weight: bold;
-  margin-bottom: 12px;
+.logout-link:hover {
+  color: #6B7280;
+}
+
+/* ===============================
+   Plans List
+================================ */
+
+.plans-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.plans-wrapper {
+  margin-top: 8px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .plans-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .plan-item {
   margin-bottom: 8px;
 }
 
+.plan-link {
+  color: #2c6bed;
+  text-decoration: none;
+}
 
+.plan-link:hover {
+  text-decoration: underline;
+}
 
+.plan-park {
+  font-size: 14px;
+  color: #666;
+}
 
 /* ===============================
    Utility
@@ -144,25 +240,8 @@
 
 .hidden {
   opacity: 0;
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   pointer-events: none;
-}
-
-.plans-wrapper {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.plans-wrapper.hidden {
   max-height: 0;
   overflow: hidden;
 }
-
-
-/* ===============================
-   
-================================ */
-
-
-
