@@ -6,8 +6,14 @@ class DiagnosisService
         name: "アナとエルサのフローズンジャーニー",
         memo: nil
       },
-      dpa_show: "ビリーブ！～シー・オブ・ドリームス～",
-      first: "センター・オブ・ジ・アース",
+      dpa_show:{
+        name: "ビリーブ！～シー・オブ・ドリームス～",
+        memo: nil
+      }, 
+      first:{
+        name: "センター・オブ・ジ・アース",
+        memo: nil
+      }, 
       pp:{
         name: "レイジングスピリッツ",
         memo: nil
@@ -29,8 +35,14 @@ class DiagnosisService
         name: "アナとエルサのフローズンジャーニー",
         memo: nil
       },
-      dpa_show: "ビリーブ！～シー・オブ・ドリームス～",
-      first: "スカットルのスクーター",
+      dpa_show:{
+        name: "ビリーブ！～シー・オブ・ドリームス～",
+        memo: nil
+      }, 
+      first:{
+        name: "スカットルのスクーター",
+        memo: nil
+      }, 
       pp:{
         name: "ニモ＆フレンズ・シーライダー",
         memo: nil
@@ -52,9 +64,18 @@ class DiagnosisService
         name: nil,
         memo: nil
       },
-      dpa_show: nil,
-      first: "センター・オブ・ジ・アース",
-      pp: "レイジングスピリッツ",
+      dpa_show:{
+        name: nil,
+        memo: nil
+      }, 
+      first:{
+        name: "センター・オブ・ジ・アース",
+        memo: nil
+      },
+      pp:{
+        name: "レイジングスピリッツ",
+        memo: nil
+      },
       lunch:{
         name: "スナグリーダックリング",
         time: "10:30-11:00",
@@ -72,9 +93,18 @@ class DiagnosisService
         name: nil,
         memo: nil
       },
-      dpa_show: nil,
-      first: "スカットルのスクーター",
-      pp: "ニモ＆フレンズ・シーライダー",
+      dpa_show:{
+        name: nil,
+        memo: nil
+      },
+      first:{
+        name: "スカットルのスクーター",
+        memo: nil
+      }, 
+      pp:{
+        name: "ニモ＆フレンズ・シーライダー",
+        memo: nil
+      },
       lunch:{
         name: "スナグリーダックリング",
         time: "10:30-11:00",
@@ -93,8 +123,14 @@ class DiagnosisService
         name: "アナとエルサのフローズンジャーニー",
         memo: "アナ雪のDPAが売り切れの場合は、ソアリンのDPAを購入。"
       },
-      dpa_show: "ビリーブ！～シー・オブ・ドリームス～",
-      first: "スカットルのスクーター",
+      dpa_show:{
+        name: "ビリーブ！～シー・オブ・ドリームス～",
+        memo: nil
+      }, 
+      first:{
+        name: "スカットルのスクーター",
+        memo: nil
+      }, 
       pp:{
         name: "レイジングスピリッツ",
         memo: "レイジングのPPが発見終了の場合は、ニモのPPを取得"
@@ -116,8 +152,14 @@ class DiagnosisService
         name: "アナとエルサのフローズンジャーニー",
         memo: "アナ雪のDPAが売り切れの場合は、ソアリンのDPAを購入。"
       },
-      dpa_show: "ビリーブ！～シー・オブ・ドリームス～",
-      first: "スカットルのスクーター",
+      dpa_show:{
+        name: "ビリーブ！～シー・オブ・ドリームス～",
+        memo: nil
+      }, 
+      first:{
+        name: "スカットルのスクーター",
+        memo: nil
+      }, 
       pp:{
         name:  "ニモ＆フレンズ・シーライダー",
         memo: nil
@@ -139,8 +181,14 @@ class DiagnosisService
         name: nil,
         memo: nil
       },
-      dpa_show: nil,
-      first: "スカットルのスクーター",
+      dpa_show:{
+        name: nil,
+        memo: nil
+      },
+      first:{
+        name: "スカットルのスクーター",
+        memo: nil
+      }, 
       pp:{
         name: "レイジングスピリッツ",
         memo: "レイジングのPPが発見終了の場合は、ニモのPPを取得"
@@ -162,8 +210,14 @@ class DiagnosisService
         name: nil,
         memo: nil
       },
-      dpa_show: nil,
-      first: "スカットルのスクーター",
+      dpa_show:{
+        name: nil,
+        memo: nil
+      },
+      first:{
+        name: "スカットルのスクーター",
+        memo: nil
+      }, 
       pp:{
         name: "ニモ＆フレンズ・シーライダー",
         memo: nil
@@ -186,8 +240,14 @@ class DiagnosisService
         name: "アナとエルサのフローズンジャーニー",
         memo: nil
       },
-      dpa_show: "ビリーブ！～シー・オブ・ドリームス～",
-      first: "センター・オブ・ジ・アース",
+      dpa_show:{
+        name: "ビリーブ！～シー・オブ・ドリームス～",
+        memo: nil
+      }, 
+      first:{
+        name: "センター・オブ・ジ・アース",
+        memo: nil
+      }, 
       pp:{
         name: "レイジングスピリッツ",
         memo: nil
@@ -209,8 +269,14 @@ class DiagnosisService
         name: "アナとエルサのフローズンジャーニー",
         memo: nil
       },
-      dpa_show: "ビリーブ！～シー・オブ・ドリームス～",
-      first: "スカットルのスクーター",
+      dpa_show:{
+        name: "ビリーブ！～シー・オブ・ドリームス～",
+        memo: nil
+      }, 
+      first:{
+        name: "スカットルのスクーター",
+        memo: nil
+      }, 
       pp:{
         name: "ニモ＆フレンズ・シーライダー",
         memo: nil
@@ -232,8 +298,14 @@ class DiagnosisService
         name: nil,
         memo: nil
       },
-      dpa_show: nil,
-      first: "センター・オブ・ジ・アース",
+      dpa_show:{
+        name: nil,
+        memo: nil
+      },
+      first:{
+        name: "センター・オブ・ジ・アース",
+        memo: nil
+      }, 
       pp:{
         name: "レイジングスピリッツ",
         memo: nil
@@ -256,7 +328,10 @@ class DiagnosisService
         memo: nil
       },
       dpa_show: nil,
-      first: "スカットルのスクーター",
+      first:{
+        name: "スカットルのスクーター",
+        memo: nil
+      }, 
       pp:{
         name: "ニモ＆フレンズ・シーライダー",
         memo: nil
@@ -279,8 +354,14 @@ class DiagnosisService
         name: "アナとエルサのフローズンジャーニー",
         memo: "アナ雪のDPAが売り切れの場合は、ソアリンのDPAを購入。"
       },
-      dpa_show: "ビリーブ！～シー・オブ・ドリームス～",
-      first: "スカットルのスクーター",
+      dpa_show:{
+        name: "ビリーブ！～シー・オブ・ドリームス～",
+        memo: nil
+      }, 
+      first:{
+        name: "スカットルのスクーター",
+        memo: nil
+      }, 
       pp:{
         name: "レイジングスピリッツ",
         memo: "レイジングのPPが発見終了の場合は、ニモのPPを取得"
@@ -302,8 +383,14 @@ class DiagnosisService
         name: "アナとエルサのフローズンジャーニー",
         memo: "アナ雪のDPAが売り切れの場合は、ソアリンのDPAを購入。"
       },
-      dpa_show: "ビリーブ！～シー・オブ・ドリームス～",
-      first: "スカットルのスクーター",
+      dpa_show:{
+        name: "ビリーブ！～シー・オブ・ドリームス～",
+        memo: nil
+      }, 
+      first:{
+        name: "スカットルのスクーター",
+        memo: nil
+      }, 
       pp:{
         name: "ニモ＆フレンズ・シーライダー",
         memo: nil
@@ -325,8 +412,14 @@ class DiagnosisService
         name: nil,
         memo: nil
       },
-      dpa_show: nil,
-      first: "スカットルのスクーター",
+      dpa_show:{
+        name: nil,
+        memo: nil
+      },
+      first:{
+        name: "スカットルのスクーター",
+        memo: nil
+      }, 
       pp:{
         name: "レイジングスピリッツ",
         memo: "レイジングのPPが発見終了の場合は、ニモのPPを取得"
@@ -348,9 +441,18 @@ class DiagnosisService
         name: nil,
         memo: nil
       },
-      dpa_show: nil,
-      first: "スカットルのスクーター",
-      pp: "ニモ＆フレンズ・シーライダー",
+      dpa_show:{
+        name: nil,
+        memo: nil
+      },
+      first:{
+        name: "スカットルのスクーター",
+        memo: nil
+      }, 
+      pp:{
+        name: "ニモ＆フレンズ・シーライダー",
+        memo: nil
+      },
       lunch:{
         name: "ニューヨーク・デリ",
         time: "10:00頃",
