@@ -1,0 +1,63 @@
+<%= form_with model: [@plan, @plan_step], local: true, id: "plan-step-form", class: "form-standard-width" do |f| %>
+
+  <!-- 順番 -->
+  <div class="form-group">
+    <%= f.label :step_number, "順番", class: "form-label" %>
+    <%= f.number_field :step_number, class: "form-input form-input-width" %>
+  </div>
+
+  <!-- Stimulusターゲット -->
+  <div
+    data-controller="target-filter"
+    data-target-filter-targets-value='<%= @targets.to_json %>'
+    data-target-filter-actions-value='<%= ActionType.all.map { |a| { id: a.id, key: a.key.to_s, name: a.name } }.to_json %>'
+  >
+
+    <!-- 行動タイプ -->
+    <div class="form-group">
+      <%= f.label :action_type_id, "行動タイプ", class: "form-label" %>
+      <%= f.collection_select :action_type_id,
+        ActionType.all,
+        :id,
+        :name,
+        { prompt: "選択してください" },
+        {
+          class: "form-select form-input-width",
+          data: {
+            "target-filter-target": "action",
+            action: "change->target-filter#updateTargets"
+          }
+        }
+      %>
+    </div>
+
+    <!-- 対象 -->
+    <div class="form-group">
+      <%= f.label :target_id, "対象", class: "form-label" %>
+      <%= f.select :target_id,
+        [],
+        { prompt: "選択してください" },
+        { class: "form-select form-input-width", data: { "target-filter-target": "targetSelect" } }
+      %>
+    </div>
+
+  </div>
+
+  <!-- 時間 -->
+  <div class="form-group">
+    <%= f.label :time, "時間", class: "form-label" %>
+    <%= f.time_field :time, class: "form-input form-input-width" %>
+  </div>
+
+  <!-- メモ -->
+  <div class="form-group">
+    <%= f.label :note, "メモ", class: "form-label" %>
+    <%= f.text_area :note, class: "form-textarea form-input-width" %>
+  </div>
+
+  <!-- 送信ボタン -->
+  <div class="form-actions">
+    <%= f.submit @plan_step.new_record? ? "追加する" : "更新する", class: "primary-button" %>
+  </div>
+
+<% end %>

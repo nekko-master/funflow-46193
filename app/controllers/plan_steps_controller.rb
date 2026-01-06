@@ -1,7 +1,11 @@
 class PlanStepsController < ApplicationController
+  before_action :set_plan
+  before_action :set_targets, only: [:new, :edit]
+
   def new
-    @plan = Plan.find(params[:plan_id])
-    @plan_step = PlanStep.new
+    @plan_step = @plan.plan_steps.new
+    last_step = @plan.plan_steps.order(:step_number).last
+    @plan_step.step_number = last_step ? last_step.step_number + 1 : 1
   end
 
   def create
@@ -22,7 +26,6 @@ class PlanStepsController < ApplicationController
   end
 
   def edit
-    @plan = Plan.find(params[:plan_id])
     @plan_step = @plan.plan_steps.find(params[:id])
   end
 
@@ -38,6 +41,25 @@ class PlanStepsController < ApplicationController
   end
 
   private
+
+  def set_plan
+    @plan = current_user.plans.find(params[:plan_id])
+  end
+
+  def set_targets
+    @targets = Target.all.map do |t|
+      {
+        id: t.id,
+        name: t.name.to_s,
+        category: t.category.to_s,
+        area: t.area.to_s,
+        dpa: !!t.dpa,
+        pp: !!t.pp,
+        entry_request: !!t.entry_request,
+        mobile_order: !!t.mobile_order
+      }
+    end
+  end
 
 
   def create_manually
