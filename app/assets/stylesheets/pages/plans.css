@@ -304,3 +304,125 @@
 .tertiary-button.is-danger:focus-visible {
   color: #991b1b;
 }
+
+
+
+/* ===============================
+   Diagnosis Page
+================================ */
+
+.diagnosis-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 80px 24px 64px;
+}
+
+/* Header */
+
+.diagnosis-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.diagnosis-meta {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.diagnosis-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.diagnosis-lead {
+  font-size: 16px;
+  color: #374151;
+  line-height: 1.6;
+}
+
+/* Form */
+
+.diagnosis-form {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Question Card */
+
+.diagnosis-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 28px 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.diagnosis-question {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+/* Radio Card */
+
+.radio-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 16px;
+  margin-bottom: 12px;
+
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.radio-card:last-child {
+  margin-bottom: 0;
+}
+
+/* Hide default radio */
+
+.radio-card input[type="radio"] {
+  accent-color: #0377cb;
+  cursor: pointer;
+}
+
+/* Hover */
+
+.radio-card:hover {
+  background: #f9fafb;
+}
+
+/* Checked state */
+
+.radio-card:has(input[type="radio"]:checked) {
+  background: #eef4ff;
+  border-color: #0377cb;
+  box-shadow: 0 0 0 3px rgba(3, 119, 203, 0.15);
+}
+
+/* Text */
+
+.radio-card span {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+/* Actions */
+
+.diagnosis-actions {
+  margin-top: 40px;
+  text-align: center;
+}

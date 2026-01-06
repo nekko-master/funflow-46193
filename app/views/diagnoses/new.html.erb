@@ -1,37 +1,86 @@
-<%#= @result.inspect %>
+<div class="diagnosis-page">
 
-<p>日付：<%= @plan.date %></p>
-<p>パーク：<%= @plan.park.name %></p>
+  <!-- Header -->
+  <div class="diagnosis-header">
+    <p class="diagnosis-meta">
+      <%= @plan.date.strftime("%-m月%-d日") %> ／ <%= @plan.park.name %>
+    </p>
+    <h1 class="diagnosis-title">
+      あなたに合った回り方を考えます
+    </h1>
+    <p class="diagnosis-lead">
+      いくつか選ぶだけで、FunFlow が1日の流れを整理します。
+    </p>
+  </div>
 
-<%= form_with url: diagnoses_path, method: :post, data: { turbo: false } do |f| %>
+  <!-- Form -->
+  <%= form_with url: diagnoses_path, method: :post, data: { turbo: false }, class: "diagnosis-form" do |f| %>
+    <%= hidden_field_tag :plan_id, @plan.id %>
 
-  <%= hidden_field_tag :plan_id, @plan.id %>
+    <!-- Q1 -->
+    <div class="diagnosis-card">
+      <p class="diagnosis-question">重視するのは？</p>
 
-  <p>重視するのは？</p>
-  <%= f.radio_button :focus, "attraction" %> アトラクション
-  <%= f.radio_button :focus, "show" %> ショー
+      <label class="radio-card">
+        <%= f.radio_button :focus, "attraction" %>
+        <span>アトラクション</span>
+      </label>
 
-  <p>朝の過ごし方は？</p>
-  <%= f.radio_button :morning, "early" %> できるだけ早く開園待ちする（6:00~7:00舞浜駅到着）
-  <%= f.radio_button :morning, "normal" %> 並ばずに入園したい（9:30頃舞浜駅到着）
+      <label class="radio-card">
+        <%= f.radio_button :focus, "show" %>
+        <span>ショー</span>
+      </label>
+    </div>
 
-  <p>DPA（有料パス）は？</p>
-  <%= f.radio_button :dpa, "buy" %> 買う
-  <%= f.radio_button :dpa, "no_buy" %> 買わない
+    <!-- Q2 -->
+    <div class="diagnosis-card">
+      <p class="diagnosis-question">朝の過ごし方は？</p>
 
-  <p>絶叫アトラクションは？</p>
-  <%= f.radio_button :thrill, "yes" %> 乗る
-  <%= f.radio_button :thrill, "no" %> 乗らない
+      <label class="radio-card">
+        <%= f.radio_button :morning, "early" %>
+        <span>できるだけ早く開園待ちする（6:00〜7:00）</span>
+      </label>
 
-  <%= f.submit "診断する" %>
-<% end %>
+      <label class="radio-card">
+        <%= f.radio_button :morning, "normal" %>
+        <span>並ばずに入園したい（9:30頃）</span>
+      </label>
+    </div>
 
-<%# <%= f.label :focus_attraction do %>
-  <%# <%= f.radio_button :focus, "attraction" %>
-  <%# アトラクション
-<% end %> 
+    <!-- Q3 -->
+    <div class="diagnosis-card">
+      <p class="diagnosis-question">DPA（有料パス）は？</p>
 
-<%# <%= f.label :focus_show do %>
-  <%# <%= f.radio_button :focus, "show" %>
-  <%# ショー
-<% end  %>
+      <label class="radio-card">
+        <%= f.radio_button :dpa, "buy" %>
+        <span>買う</span>
+      </label>
+
+      <label class="radio-card">
+        <%= f.radio_button :dpa, "no_buy" %>
+        <span>買わない</span>
+      </label>
+    </div>
+
+    <!-- Q4 -->
+    <div class="diagnosis-card">
+      <p class="diagnosis-question">絶叫アトラクションは？</p>
+
+      <label class="radio-card">
+        <%= f.radio_button :thrill, "yes" %>
+        <span>乗る</span>
+      </label>
+
+      <label class="radio-card">
+        <%= f.radio_button :thrill, "no" %>
+        <span>乗らない</span>
+      </label>
+    </div>
+
+    <!-- Actions -->
+    <div class="diagnosis-actions">
+      <%= f.submit "診断する", class: "primary-button" %>
+    </div>
+
+  <% end %>
+</div>
