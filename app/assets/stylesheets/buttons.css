@@ -1,19 +1,104 @@
+
 /* ===============================
    Buttons
 ================================ */
 
+.primary-button,
+.secondary-button,
 .tertiary-button {
   display: inline-block;
-  padding: 10px 20px;
-  font-size: 14px;
-  color: #374151;
-  background: transparent;
-  border: 1px solid #d1d5db;
-  border-radius: 9999px;
+  text-align: center;
   text-decoration: none;
-  transition: all 0.2s ease;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: background-color 0.2s ease,
+              box-shadow 0.2s ease,
+              transform 0.15s ease;
+}
+
+/* Primary */
+
+.primary-button {
+  padding: 14px 24px;
+  background: #0377CB;
+  color: #ffffff;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-button:hover {
+  background: #0266AD; /* 少し濃く */
+}
+
+.primary-button:focus-visible {
+  background: #025E9E;
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(3, 119, 203, 0.35);
+}
+
+/* Secondary */
+
+.secondary-button {
+  padding: 12px 24px;
+  background: #F3F6FA;
+  color: #333;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease,
+              border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.secondary-button:hover {
+  background: #E9EEF5;
+}
+
+.secondary-button:focus-visible {
+  background: #E9EEF5;
+  outline: none;
+  border-color: #0377CB;
+  box-shadow:
+    0 0 0 2px rgba(3, 119, 203, 0.25);
+}
+
+
+/* Tertiary */
+
+.tertiary-button {
+  background: none;
+  border: none;
+  padding: 0;
+
+  font-size: 14px;
+  font-weight: 500;
+  color: #5F6C7B;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .tertiary-button:hover {
-  background: #f9fafb;
+  color: #374151;
+  text-decoration: underline;
 }
+
+.tertiary-button:focus-visible {
+  outline: none;
+  text-decoration: underline;
+}
+
+/* Logout specific */
+
+.logout-link {
+  color: #9CA3AF; /* さらに弱く */
+  font-size: 13px;
+}
+
+.logout-link:hover {
+  color: #6B7280;
+}
+
+
+
+

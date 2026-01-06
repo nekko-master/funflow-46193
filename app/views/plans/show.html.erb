@@ -1,57 +1,115 @@
-<h1>プラン詳細</h1>
+<div class="plan-page">
 
-<p>
-  <strong>日付：</strong>
-  <%= @plan.date %>
-</p>
+  <!-- ===== プランヘッダー ===== -->
+  <header class="plan-header">
+    <h1 class="plan-title">
+      <%= @plan.date.strftime("%-m月%-d日") %>
+      <span class="plan-park">ディズニーシーのプラン</span>
+    </h1>
 
-<p>
-  <strong>パーク：</strong>
-  <%= @plan.park.name %>
-</p>
+    <p class="plan-meta">
+      作成者：<%= @plan.user.nickname %> さん
+    </p>
+  </header>
 
-<p>
-  <strong>作成者：</strong>
-  <%= @plan.user.nickname %>
-</p>
+  <!-- ===== 次のアクション（最重要） ===== -->
+  <section class="plan-primary-action">
+    <%= link_to "おすすめの流れを作る",
+        new_diagnosis_path(plan_id: @plan.id),
+        class: "primary-button" %>
 
-<%= link_to "このプランで簡単診断する", new_diagnosis_path(plan_id: @plan.id) %>
+    <p class="action-note">
+      いくつか質問に答えるだけで、行動の流れを提案します
+    </p>
+  </section>
 
-<%= link_to "一覧に戻る", plans_path %>
+  <!-- ===== 行動ステップ ===== -->
+  <section class="plan-steps-section">
+    <h2 class="section-title">この日の流れ</h2>
 
-<%= link_to "プランを編集", edit_plan_path(@plan) %>
+    <% if @plan.plan_steps.any? %>
+      <ol class="plan-steps">
+        <% @plan.plan_steps.order(:step_number).each do |step| %>
+          <li class="plan-step">
+            <div class="step-main">
+              <span class="step-number"><%= step.step_number %></span>
 
-<%= link_to "プランを削除",
-            plan_path(@plan),
-            data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } %>
+              <div class="step-content">
+                <p class="step-title">
+                  <%= step.action_type.name %> ／ <%= step.target.name %>
+                </p>
 
-<h2>行動ステップ</h2>
+                <% if step.time.present? || step.note.present? %>
+                  <p class="step-meta">
+                    <% if step.time.present? %>
+                      <span class="step-time">
+                        <%= step.time.strftime("%H:%M") %>
+                      </span>
+                    <% end %>
 
-<% if @plan.plan_steps.any? %>
-  <ul>
-    <% @plan.plan_steps.order(:step_number).each do |step| %>
-      <li>
-        <%= step.step_number %>.
-        <%= step.action_type.name %> /
-        <%= step.target.name %>
-        <% if step.time.present? %>
-          （<%= step.time.strftime("%H:%M") %>）
+                    <% if step.note.present? %>
+                      <span class="step-note">
+                        <%= step.note %>
+                      </span>
+                    <% end %>
+                  </p>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="step-actions">
+              <%= link_to "編集",
+                  edit_plan_plan_step_path(step.plan, step),
+                  class: "tertiary-button" %>
+
+              <%= link_to "削除",
+                  plan_plan_step_path(step.plan, step),
+                  data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "削除しますか？"
+                  },
+                  class: "tertiary-button is-danger" %>
+            </div>
+          </li>
         <% end %>
-        <% if step.note.present? %>
-          （<%= step.note %>）
-        <% end %>
+      </ol>
 
-        <%= link_to "行動ステップを編集",
-                    edit_plan_plan_step_path(step.plan, step) %>
-
-        <%= link_to "削除",
-            plan_plan_step_path(step.plan, step),
-            data: { turbo_method: :delete, turbo_confirm: "削除しますか？" } %>
-      </li>
+    <% else %>
+      <div class="empty-steps">
+        <p class="empty-title">
+          まだ流れが決まっていません
+        </p>
+        <p class="empty-text">
+          おすすめ診断を使うか、手動で行動を追加できます
+        </p>
+      </div>
     <% end %>
-  </ul>
-<% else %>
-  <p>まだ行動が登録されていません</p>
-<% end %>
+  </section>
 
-<%= link_to "手動で行動を追加", new_plan_plan_step_path(@plan) %>
+  <!-- ===== 補助アクション ===== -->
+  <section class="plan-secondary-actions">
+    <%= link_to "手動で行動を追加",
+        new_plan_plan_step_path(@plan),
+        class: "secondary-button" %>
+
+    <%= link_to "プランを編集",
+        edit_plan_path(@plan),
+        class: "tertiary-button" %>
+
+    <%= link_to "プランを削除",
+        plan_path(@plan),
+        data: {
+          turbo_method: :delete,
+          turbo_confirm: "本当に削除しますか？"
+        },
+        class: "tertiary-button is-danger" %>
+  </section>
+
+  <!-- ===== ナビゲーション ===== -->
+  <nav class="plan-footer-nav">
+    <%= link_to "プラン一覧に戻る",
+        plans_path,
+        class: "tertiary-button" %>
+  </nav>
+
+</div>
