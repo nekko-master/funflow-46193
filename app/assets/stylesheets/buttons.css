@@ -1,0 +1,19 @@
+/* ===============================
+   Buttons
+================================ */
+
+.tertiary-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #374151;
+  background: transparent;
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.tertiary-button:hover {
+  background: #f9fafb;
+}

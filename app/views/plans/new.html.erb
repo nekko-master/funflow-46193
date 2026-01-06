@@ -1,5 +1,45 @@
-<%= form_with model: @plan do |f| %>
-  <%= f.collection_select :park_id, Park.all, :id, :name %>
-  <%= f.date_field :date %>
-  <%= f.submit "プラン作成" %>
-<% end %>
+<div class="plan-new-page">
+
+  <header class="plan-new-hero">
+    <h1 class="plan-new-title">プランを作成する</h1>
+    <p class="plan-new-lead">
+      まずは、行く日とパークを選びましょう。<br>
+      楽しい一日の流れづくりは、ここから始まります。
+    </p>
+  </header>
+
+  <main class="plan-new-content">
+
+    <div class="plan-form-card">
+      <%= form_with model: @plan, local: true do |f| %>
+
+        <div class="form-group">
+          <%= f.label :park_id, "行くパーク" %>
+          <%= f.select :park_id,
+              options_for_select([
+                ["ディズニーランド（後日実装）", 1, { disabled: true }],
+                ["ディズニーシー", 2]
+              ]),
+              { prompt: "選択してください" },
+              class: "form-select" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :date, "行く日" %>
+          <%= f.date_field :date, class: "form-input" %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.submit "プランを作成する", class: "primary-button" %>
+        </div>
+
+      <% end %>
+    </div>
+
+    <div class="plan-new-footer">
+      <%= link_to "トップに戻る", root_path, class: "tertiary-button" %>
+    </div>
+
+  </main>
+
+</div>
