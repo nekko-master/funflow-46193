@@ -35,6 +35,11 @@
                 <%= link_to "編集",
                             edit_plan_plan_step_path(@plan, step),
                             class: "secondary-button" %>
+                <%= link_to "削除",
+                  plan_plan_step_path(@plan, step),
+                  method: :delete,
+                  data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" },
+                  class: "tertiary-button is-danger" %>
               </div>
             <% end %>
 
