@@ -53,14 +53,16 @@
       <%= render "step_list",
           steps: steps.select { |s| %i[dpa pp mobile_order entry].include?(s.action_type.key) },
           title: "アプリ操作",
-          description: "入園後や空き時間に、公式アプリで取得・予約しておく行動です。待ち時間を減らすため、優先的に実施しましょう。" %>
+          description: "入園後や空き時間に、公式アプリで取得・予約しておく行動です。待ち時間を減らすため、優先的に実施しましょう。",
+          show_edit_button: @plan.persisted? %>
 
       <%= render "step_list",
           steps: steps.reject { |s| %i[dpa pp mobile_order entry].include?(s.action_type.key) },
           title: "周り方",
           description: "実際にパーク内を移動しながら体験する順番のイメージです。
                         診断では最初に並ぶのがおすすめのアトラクションを提案しています。
-                        その後は、空き時間や移動距離を見ながら自由に予定を追加してみてください。" %>
+                        その後は、空き時間や移動距離を見ながら自由に予定を追加してみてください。",
+          show_edit_button: @plan.persisted? %>
 
     <% else %>
       <div class="empty-steps">

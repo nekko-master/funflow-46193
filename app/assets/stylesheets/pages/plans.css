@@ -189,6 +189,7 @@
   padding: 20px 20px 16px;
   margin-bottom: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  
 }
 
 /* ===== Step Main ===== */
@@ -452,4 +453,10 @@
 .form-textarea {
   min-height: 80px;
   resize: vertical; /* ユーザーが縦にサイズ調整できる */
+}
+
+
+
+.plan-step .secondary-button {
+
 }

@@ -60,4 +60,9 @@
     <%= f.submit @plan_step.new_record? ? "追加する" : "更新する", class: "primary-button" %>
   </div>
 
+
+  <%= link_to "戻る",
+            plan_path(@plan),
+            class: "tertiary-button" %>
+
 <% end %>

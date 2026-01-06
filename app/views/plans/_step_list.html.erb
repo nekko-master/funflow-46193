@@ -28,6 +28,16 @@
                 <% end %>
               </p>
             <% end %>
+
+            <%# 保存済みプランなら編集ボタンを表示 %>
+            <% if local_assigns[:show_edit_button] %>
+              <div class="step-actions">
+                <%= link_to "編集",
+                            edit_plan_plan_step_path(@plan, step),
+                            class: "secondary-button" %>
+              </div>
+            <% end %>
+
           </div>
         </div>
       </li>

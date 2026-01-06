@@ -27,6 +27,8 @@ class PlanStepsController < ApplicationController
 
   def edit
     @plan_step = @plan.plan_steps.find(params[:id])
+    @targets = Target.all
+   
   end
 
   def update
@@ -60,6 +62,7 @@ class PlanStepsController < ApplicationController
       }
     end
   end
+
 
 
   def create_manually
