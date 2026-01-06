@@ -1,11 +1,145 @@
-<h1>FunFlowとは</h1>
+<div class="about-page">
 
-<p>このページはアプリの説明ページです。</p>
+  <div class="about-background">
 
-<% if user_signed_in? %>
-  <p>ログイン中：<%= current_user.nickname %>さん</p>
-<% else %>
-  <p>ログインしていません</p>
-<% end %>
+    <div class="about-container">
 
-<%= link_to "トップに戻る", root_path %>
+      <header class="about-hero">
+        <h1 class="about-title">FunFlowについて</h1>
+        <p class="about-lead">
+          FunFlowは、ディズニーリゾートでの一日を<br>
+          「効率よく回る」ためではなく、<br>
+          「ちゃんと楽しむ」ために作られたアプリです。
+        </p>
+      </header>
+
+      <main class="about-content">
+
+        <section class="about-section">
+          <h2>なぜFunFlowを作ったのか</h2>
+
+          <p class="about-text">
+            最近のディズニーリゾートは、
+            コロナ以降アプリでのパス取得が主流になり、
+            「難しそう」「事前に考えることが多くて疲れそう」
+            と感じる声を聞くことが増えました。
+          </p>
+
+          <p class="about-text">
+            一方で、チケット価格の変動制が導入されたことで
+            以前より混雑が抑えられ、
+            アプリでパスを取得することで
+            園内を走り回る必要も少なくなりました。
+            パスの取り方さえ分かれば、
+            実は以前よりも快適に過ごせる環境になっていると感じています。
+          </p>
+
+          <p class="about-text">
+            私自身は、いつも事前に
+            「どのパスを取るか」「どんな順番で回るか」を
+            簡単なメモにまとめています。
+          </p>
+
+          <p class="about-text">
+            そのメモがあるだけで、
+            当日は迷わず行動でき、
+            一緒に行った友人からも
+            「こんなにゆっくり食事できたのは初めて」
+            「疲れなかった」
+            「思ったよりたくさん楽しめた」
+            と言ってもらえました。
+          </p>
+
+          <p class="about-text">
+            「効率よく回らなければ」
+            「これもやらなければ」
+            と考えるのではなく、
+            しっかり食事をして、
+            その時間そのものを楽しむ。
+          </p>
+
+          <p class="about-text">
+            そんなディズニーリゾートでの過ごし方を
+            誰でも再現できるようにしたい。
+            その思いから生まれたのが FunFlow です。
+          </p>
+        </section>
+
+        <section class="about-section">
+          <h2>FunFlowが大切にしていること</h2>
+
+          <p class="about-text">
+            FunFlowは、
+            「その場で考え続ける負担」を減らし、
+            「今この瞬間を楽しむこと」に集中できる状態をつくります。
+          </p>
+
+          <p class="about-text">
+            事前に行動の流れを整理し、
+            当日は見るだけ。
+            それだけで、体験は大きく変わります。
+          </p>
+        </section>
+
+        <section class="about-section diagram-section">
+          <h2>図で分かる FunFlow</h2>
+
+          <div class="diagram-flow">
+
+            <div class="diagram-card is-before">
+              <h3 class="diagram-title">Before</h3>
+              <p class="diagram-text">
+                何を取る？<br>
+                どこに行く？<br>
+                当日ずっと考えて疲れる
+              </p>
+            </div>
+
+            <div class="diagram-arrow">→</div>
+
+            <div class="diagram-card is-funflow">
+              <h3 class="diagram-title">FunFlow</h3>
+              <p class="diagram-text">
+                事前に行動の流れを整理<br>
+                当日は「今やること」だけを見る
+              </p>
+            </div>
+
+            <div class="diagram-arrow">→</div>
+
+            <div class="diagram-card is-after">
+              <h3 class="diagram-title">After</h3>
+              <p class="diagram-text">
+                迷わない<br>
+                疲れない<br>
+                ちゃんと楽しめる
+              </p>
+            </div>
+
+          </div>
+        </section>
+
+
+        <section class="about-section about-status">
+          <% if user_signed_in? %>
+            <p class="login-status">
+              <span class="user-name"><%= current_user.nickname %></span>さん、
+              次のディズニーの流れを整理してみませんか？
+            </p>
+          <% else %>
+            <p class="login-status is-guest">
+              段取りがあるだけで、ディズニーはもっと楽になります。
+            </p>
+          <% end %>
+        </section>
+
+        <div class="about-actions">
+          <%= link_to "トップに戻る", root_path, class: "tertiary-button" %>
+        </div>
+
+      </main>
+
+    </div>
+  </div>
+</div>
+
