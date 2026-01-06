@@ -11,4 +11,13 @@ class ActionType < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :plan_steps
+
+  def self.find_by_key!(key)
+    key = key.to_sym if key.respond_to?(:to_sym)
+
+    record = all.find { |a| a.key == key }
+    raise ActiveHash::RecordNotFound, "Couldn't find ActionType with key=#{key}" unless record
+
+    record
+  end
 end

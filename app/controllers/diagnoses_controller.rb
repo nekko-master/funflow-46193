@@ -1,21 +1,20 @@
 class DiagnosesController < ApplicationController
   def new
-    @plan = Plan.find(params[:plan_id])
+    @plan = current_user.plans.find(params[:plan_id])
   end
 
   def create
-    @plan = Plan.find(params[:plan_id])
-    
-    @result = DiagnosisService.call(
+    result = DiagnosisService.call(
       focus: params[:focus],
       morning: params[:morning],
       dpa: params[:dpa],
       thrill: params[:thrill]
     )
-    
-    RouteBuilder.new(@plan, @result).call
-    redirect_to plan_path(@plan)
-  end
 
+    steps = RouteBuilder.build(result)
+    session[:diagnosis_preview] = steps
+
+    redirect_to preview_plans_path(plan_id: params[:plan_id])
+  end
 
 end

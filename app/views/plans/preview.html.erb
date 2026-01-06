@@ -1,0 +1,63 @@
+<div class="plan-page">
+
+  <header class="plan-header">
+    <h1 class="plan-title">
+      おすすめプラン（保存前プレビュー）
+      <span class="plan-park">ディズニーシー</span>
+    </h1>
+
+    <p class="plan-meta is-preview">
+      ※ このプランはまだ保存されていません
+    </p>
+  </header>
+
+  <section class="plan-steps-section">
+    <h2 class="section-title">この日の流れ</h2>
+
+    <% if @plan_steps.any? %>
+      <ol class="plan-steps">
+        <% @plan_steps.sort_by(&:step_number).each do |step| %>
+          <li class="plan-step">
+            <div class="step-main">
+              <span class="step-number"><%= step.step_number %></span>
+
+              <div class="step-content">
+                <p class="step-title">
+                  <%= step.action_type.name %> ／ <%= step.target.name %>
+                </p>
+
+                <% if step.time.present? || step.note.present? %>
+                  <p class="step-meta">
+                    <% if step.time.present? %>
+                      <span class="step-time"><%= step.time %></span>
+                    <% end %>
+
+                    <% if step.note.present? %>
+                      <span class="step-note"><%= step.note %></span>
+                    <% end %>
+                  </p>
+                <% end %>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ol>
+    <% else %>
+      <p>この日の流れはまだありません</p>
+    <% end %>
+
+  </section>
+
+  <section class="plan-secondary-actions">
+    <%= button_to "この内容で保存する",
+        save_from_preview_plans_path(plan_id: @plan.id),
+        method: :post,
+        class: "primary-button" %>
+
+    <%= link_to "診断をやり直す",
+        new_diagnosis_path(plan_id: @plan.id),
+        class: "tertiary-button" %>
+  </section>
+
+
+</div>
