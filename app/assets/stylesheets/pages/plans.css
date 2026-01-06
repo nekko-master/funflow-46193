@@ -426,3 +426,9 @@
   margin-top: 40px;
   text-align: center;
 }
+
+
+.subsection-title {
+  margin-top: 1.5rem;
+  font-weight: bold;
+}

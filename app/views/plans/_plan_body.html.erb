@@ -1,0 +1,113 @@
+<div class="plan-page">
+
+  <!-- ===== プランヘッダー ===== -->
+  <header class="plan-header">
+    <h1 class="plan-title">
+      <% if @plan.date.present? %>
+        <%= @plan.date.strftime("%-m月%-d日") %>
+      <% end %>
+      <span class="plan-park"><%= @park_name || "ディズニーシー" %>のプラン</span>
+    </h1>
+
+    <% if @plan.persisted? %>
+      <p class="plan-meta">
+        作成者：<%= @plan.user.nickname %> さん
+      </p>
+    <% else %>
+      <p class="plan-meta is-preview">
+        ※ このプランはまだ保存されていません
+      </p>
+    <% end %>
+  </header>
+
+  <!-- ===== 次のアクション（最重要） ===== -->
+  <% if @plan.persisted? %>
+    <section class="plan-primary-action">
+      <% if @plan.plan_steps.any? %>
+        <%= link_to "おすすめの流れを作り直す／編集する",
+            new_diagnosis_path(plan_id: @plan.id),
+            class: "primary-button is-secondary" %>
+
+        <p class="action-note">
+          もう一度診断して、このプランの流れを作り直せます
+        </p>
+      <% else %>
+        <%= link_to "おすすめの流れを作る",
+            new_diagnosis_path(plan_id: @plan.id),
+            class: "primary-button" %>
+
+        <p class="action-note">
+          いくつか質問に答えるだけで、行動の流れを提案します
+        </p>
+      <% end %>
+    </section>
+  <% end %>
+
+  <!-- ===== 行動ステップ ===== -->
+  <section class="plan-steps-section">
+    <h2 class="section-title">この日の流れ</h2>
+
+    <% steps = @plan_steps || @plan.plan_steps.sort_by(&:step_number) %>
+
+    <% if steps.any? %>
+      <%= render "step_list",
+          steps: steps.select { |s| %i[dpa pp mobile_order entry].include?(s.action_type.key) },
+          title: "アプリ操作",
+          description: "入園後や空き時間に、公式アプリで取得・予約しておく行動です。待ち時間を減らすため、優先的に実施しましょう。" %>
+
+      <%= render "step_list",
+          steps: steps.reject { |s| %i[dpa pp mobile_order entry].include?(s.action_type.key) },
+          title: "周り方",
+          description: "実際にパーク内を移動しながら体験する順番のイメージです。
+                        診断では最初に並ぶのがおすすめのアトラクションを提案しています。
+                        その後は、空き時間や移動距離を見ながら自由に予定を追加してみてください。" %>
+
+    <% else %>
+      <div class="empty-steps">
+        <p class="empty-title">
+          まだ流れが決まっていません
+        </p>
+        <p class="empty-text">
+          この内容で保存するか、診断をやり直してください
+        </p>
+      </div>
+    <% end %>
+  </section>
+
+  <!-- ===== 補助アクション ===== -->
+  <section class="plan-secondary-actions">
+    <% if @plan.persisted? %>
+      <%= link_to "手動で行動を追加",
+          new_plan_plan_step_path(@plan),
+          class: "secondary-button" %>
+
+      <%= link_to "プランを編集",
+          edit_plan_path(@plan),
+          class: "tertiary-button" %>
+
+      <%= link_to "プランを削除",
+          plan_path(@plan),
+          data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" },
+          class: "tertiary-button is-danger" %>
+    <% else %>
+      <%= button_to "この内容で保存する",
+          save_from_preview_plans_path(plan_id: params[:plan_id]),
+          method: :post,
+          class: "primary-button" %>
+
+      <%= link_to "診断をやり直す",
+          new_diagnosis_path(plan_id: params[:plan_id]),
+          class: "tertiary-button" %>
+    <% end %>
+  </section>
+
+  <!-- ===== ナビゲーション ===== -->
+  <% if @plan.persisted? %>
+    <nav class="plan-footer-nav">
+      <%= link_to "プラン一覧に戻る",
+          plans_path,
+          class: "tertiary-button" %>
+    </nav>
+  <% end %>
+
+</div>

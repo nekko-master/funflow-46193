@@ -1,0 +1,36 @@
+<section class="plan-steps-subsection">
+  <h3 class="subsection-title"><%= title %></h3>
+  <p class="subsection-description"><%= description %></p>
+
+  <ol class="plan-steps">
+    <% steps.each_with_index do |step, index| %>
+      <li class="plan-step">
+        <div class="step-main">
+          <span class="step-number"><%= index + 1 %></span>
+
+          <div class="step-content">
+            <p class="step-title">
+              <%= step.action_type.name %> ／ <%= step.target.name %>
+            </p>
+
+            <% if step.time.present? || step.note.present? %>
+              <p class="step-meta">
+                <% if step.time.present? %>
+                  <span class="step-time">
+                    <%= step.time.is_a?(String) ? step.time : step.time.strftime("%H:%M") %>
+                  </span>
+                <% end %>
+
+                <% if step.note.present? %>
+                  <span class="step-note">
+                    <%= simple_format(step.note) %>
+                  </span>
+                <% end %>
+              </p>
+            <% end %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ol>
+</section>
