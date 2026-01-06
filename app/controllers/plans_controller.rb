@@ -43,11 +43,15 @@ class PlansController < ApplicationController
     steps = session[:diagnosis_preview]
     return redirect_to root_path, alert: "診断データがありません" unless steps
 
-    base_plan = current_user.plans.find(params[:plan_id])
+    plan = current_user.plans.find(params[:plan_id])
 
     ActiveRecord::Base.transaction do
+      # 🔥 既存のおすすめルートを全削除
+      plan.plan_steps.destroy_all
+
+      # 新しいおすすめルートを保存
       steps.each do |step|
-        base_plan.plan_steps.create!(
+        plan.plan_steps.create!(
           step_number: step["step_number"],
           action_type_id: ActionType.find_by_key!(step["action_type"]).id,
           target_id: Target.find_by!(name: step["target_name"]).id,
@@ -58,8 +62,10 @@ class PlansController < ApplicationController
     end
 
     session.delete(:diagnosis_preview)
-    redirect_to plan_path(base_plan), notice: "プランを保存しました"
+
+    redirect_to plan_path(plan), notice: "おすすめの流れを更新しました"
   end
+
 
 
   def show

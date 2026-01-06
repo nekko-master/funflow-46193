@@ -13,24 +13,31 @@
       <p class="plan-meta">
         作成者：<%= @plan.user.nickname %> さん
       </p>
-    <% else %>
-      <p class="plan-meta is-preview">
-        ※ これは保存前のプレビューです
-      </p>
     <% end %>
   </header>
 
   <!-- ===== 次のアクション（最重要） ===== -->
   <% if @plan.persisted? %>
     <section class="plan-primary-action">
-      <%= link_to "おすすめの流れを作る",
-          new_diagnosis_path(plan_id: @plan.id),
-          class: "primary-button" %>
+      <% if @plan.plan_steps.any? %>
+        <%= link_to "おすすめの流れを作り直す／編集する",
+            new_diagnosis_path(plan_id: @plan.id),
+            class: "primary-button is-secondary" %>
 
-      <p class="action-note">
-        いくつか質問に答えるだけで、行動の流れを提案します
-      </p>
+        <p class="action-note">
+          もう一度診断して、このプランの流れを作り直せます
+        </p>
+      <% else %>
+        <%= link_to "おすすめの流れを作る",
+            new_diagnosis_path(plan_id: @plan.id),
+            class: "primary-button" %>
+
+        <p class="action-note">
+          いくつか質問に答えるだけで、行動の流れを提案します
+        </p>
+      <% end %>
     </section>
+
   <% end %>
 
   <!-- ===== 行動ステップ ===== -->

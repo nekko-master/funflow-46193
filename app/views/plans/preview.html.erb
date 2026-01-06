@@ -52,7 +52,9 @@
     <%= button_to "この内容で保存する",
         save_from_preview_plans_path(plan_id: @plan.id),
         method: :post,
+        data: { turbo_confirm: "既存の流れは上書きされます。よろしいですか？" },
         class: "primary-button" %>
+
 
     <%= link_to "診断をやり直す",
         new_diagnosis_path(plan_id: @plan.id),
