@@ -17,19 +17,20 @@ https://funflow-46193.onrender.com/
 
 ## 利用方法
 1. テスト用アカウントでログインする（ユーザー新規登録も可能である） 
- https://gyazo.com/f4bc15bc1a0ac2f50956ab9543a64d0f
+ [![Image from Gyazo](https://i.gyazo.com/f4bc15bc1a0ac2f50956ab9543a64d0f.gif)](https://gyazo.com/f4bc15bc1a0ac2f50956ab9543a64d0f)
 2. 「プランを作成する」ボタンを押下する 
+ [![Image from Gyazo](https://i.gyazo.com/fbf1cc841d1ebe04a8fcd50eeaea3487.gif)](https://gyazo.com/fbf1cc841d1ebe04a8fcd50eeaea3487)
 3. パーク名（現在はディズニーシーのみ対応）と行く日を選択し、「プラン作成」ボタンを押下する 
- https://gyazo.com/9d1ab763d913d698c7e469c4b309d8b3
+ [![Image from Gyazo](https://i.gyazo.com/9d1ab763d913d698c7e469c4b309d8b3.gif)](https://gyazo.com/9d1ab763d913d698c7e469c4b309d8b3)
 4. 4つの質問（2択）に回答し、「おすすめの流れを作る」ボタンを押下する 
- https://gyazo.com/ced683c68c3f25725dea04a9b19277cb
+ [![Image from Gyazo](https://i.gyazo.com/ced683c68c3f25725dea04a9b19277cb.gif)](https://gyazo.com/ced683c68c3f25725dea04a9b19277cb)
 5. 提案内容を確認し、「この内容で保存する」ボタンを押下する 
- https://gyazo.com/d7e0034278637f97b043a0b8a1522eac
+ [![Image from Gyazo](https://i.gyazo.com/d7e0034278637f97b043a0b8a1522eac.gif)](https://gyazo.com/d7e0034278637f97b043a0b8a1522eac)
 6. おすすめの流れ（パス取得順、アトラクション、食事など）が保存される
- https://gyazo.com/a7238f69b424da30a2870a53e2d6c67a
+ [![Image from Gyazo](https://i.gyazo.com/a7238f69b424da30a2870a53e2d6c67a.gif)](https://gyazo.com/a7238f69b424da30a2870a53e2d6c67a)
 7. 必要に応じて、手動で追加の行動をプランに組み込むことが可能である
- https://gyazo.com/221c89827ed597f06c74a5f3ea022c19
- https://gyazo.com/efd9979f4301425bc0dbb366014b9575
+ [![Image from Gyazo](https://i.gyazo.com/221c89827ed597f06c74a5f3ea022c19.gif)](https://gyazo.com/221c89827ed597f06c74a5f3ea022c19)
+ [![Image from Gyazo](https://i.gyazo.com/efd9979f4301425bc0dbb366014b9575.gif)](https://gyazo.com/efd9979f4301425bc0dbb366014b9575)
 
 ## アプリケーションを作成した背景
 私はディズニーリゾートに年に5回以上通っており、その際に朝一で取得するパスや回る順序などを簡単なメモにまとめている。  
