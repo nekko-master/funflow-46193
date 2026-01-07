@@ -19,78 +19,44 @@
           <h2>なぜFunFlowを作ったのか</h2>
 
           <p class="about-text">
-            最近のディズニーリゾートは、
-            コロナ以降アプリでのパス取得が主流になり、
-            「難しそう」「事前に考えることが多くて疲れそう」
-            と感じる声を聞くことが増えました。
+            最近のディズニーリゾートでは、アプリでパスを取得することが主流になりました。  
+            その一方で、「難しそう」「事前に考えることが多くて疲れそう」と感じる方も少なくありません。
           </p>
 
           <p class="about-text">
-            一方で、チケット価格の変動制が導入されたことで
-            以前より混雑が抑えられ、
-            アプリでパスを取得することで
-            園内を走り回る必要も少なくなりました。
-            パスの取り方さえ分かれば、
-            実は以前よりも快適に過ごせる環境になっていると感じています。
+            でも、パスの取り方さえ分かれば、園内を走り回る必要はなく、以前より快適に過ごせます。  
+           実際に私自身も簡単なメモで行動の流れを整理するだけで、友人から「ゆっくり食事できた」「疲れなかった」「たくさん楽しめた」と喜んでもらえました。
           </p>
 
           <p class="about-text">
-            私自身は、いつも事前に
-            「どのパスを取るか」「どんな順番で回るか」を
-            簡単なメモにまとめています。
-          </p>
-
-          <p class="about-text">
-            そのメモがあるだけで、
-            当日は迷わず行動でき、
-            一緒に行った友人からも
-            「こんなにゆっくり食事できたのは初めて」
-            「疲れなかった」
-            「思ったよりたくさん楽しめた」
-            と言ってもらえました。
-          </p>
-
-          <p class="about-text">
-            「効率よく回らなければ」
-            「これもやらなければ」
-            と考えるのではなく、
-            しっかり食事をして、
-            その時間そのものを楽しむ。
-          </p>
-
-          <p class="about-text">
-            そんなディズニーリゾートでの過ごし方を
-            誰でも再現できるようにしたい。
-            その思いから生まれたのが FunFlow です。
+            「効率よく回る」ことを優先するのではなく、  
+            しっかり食事を楽しみ、その時間そのものを満喫する。  
+            誰でもこの体験を再現できるようにしたい——そんな思いから FunFlow が生まれました。
           </p>
         </section>
 
         <section class="about-section">
-          <h2>FunFlowが大切にしていること</h2>
+          <h2>FunFlowの特徴</h2>
 
           <p class="about-text">
-            FunFlowは、
-            「その場で考え続ける負担」を減らし、
-            「今この瞬間を楽しむこと」に集中できる状態をつくります。
+            FunFlowは、事前に行動の流れを整理することで、当日は「今やること」だけを見て行動できる状態を作ります。  
+            これにより、「その場で考え続ける負担」を減らし、目の前の時間を楽しむことに集中できます。
           </p>
 
           <p class="about-text">
-            事前に行動の流れを整理し、
-            当日は見るだけ。
-            それだけで、体験は大きく変わります。
+            行動の流れはアプリ上で提案されるので、迷うことなく、疲れにくく、充実した体験を実現できます。
           </p>
         </section>
 
         <section class="about-section diagram-section">
-          <h2>図で分かる FunFlow</h2>
+          <h2>FunFlowの効果を図で見る</h2>
 
           <div class="diagram-flow">
 
             <div class="diagram-card is-before">
               <h3 class="diagram-title">Before</h3>
               <p class="diagram-text">
-                何を取る？<br>
-                どこに行く？<br>
+                何を取る？<br>どこに行く？ <br> 
                 当日ずっと考えて疲れる
               </p>
             </div>
@@ -100,7 +66,7 @@
             <div class="diagram-card is-funflow">
               <h3 class="diagram-title">FunFlow</h3>
               <p class="diagram-text">
-                事前に行動の流れを整理<br>
+                事前に行動の流れを整理 <br>
                 当日は「今やること」だけを見る
               </p>
             </div>
@@ -110,25 +76,27 @@
             <div class="diagram-card is-after">
               <h3 class="diagram-title">After</h3>
               <p class="diagram-text">
-                迷わない<br>
-                疲れない<br>
-                ちゃんと楽しめる
+                迷わない、<br>疲れない、<br>ちゃんと楽しめる
               </p>
             </div>
 
           </div>
-        </section>
 
+          <p class="about-text" style="margin-top:24px;">
+            事前に流れを整理しておくことで、当日は判断に迷わず、目の前の体験を最大限楽しめます。
+          </p>
+        </section>
 
         <section class="about-section about-status">
           <% if user_signed_in? %>
             <p class="login-status">
-              <span class="user-name"><%= current_user.nickname %></span>さん、
-              次のディズニーの流れを整理してみませんか？
+              <span class="user-name"><%= current_user.nickname %></span>さん、  
+              まずは次のディズニーの流れを整理してみませんか？
             </p>
           <% else %>
             <p class="login-status is-guest">
-              段取りがあるだけで、ディズニーはもっと楽になります。
+              事前の段取りがあるだけで、ディズニーはもっと楽しくなります。<br>
+              まずはアカウントを作って、あなたの一日を整理してみませんか？
             </p>
           <% end %>
         </section>
@@ -142,4 +110,3 @@
     </div>
   </div>
 </div>
-

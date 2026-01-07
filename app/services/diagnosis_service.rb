@@ -20,12 +20,12 @@ class DiagnosisService
       },
       lunch:{
         name: "スナグリーダックリング",
-        time: "10:30-11:00",
+        time: "10:30",
         memo: "モバイルオーダー"
       },
       dinner:{
         name: "ニューヨーク・デリ",
-        time: "18:30頃",
+        time: "18:30",
         memo: "モバイルオーダー、DPA席に入場次第食事"
       },
     },
@@ -49,12 +49,12 @@ class DiagnosisService
       },
       lunch:{
         name: "スナグリーダックリング",
-        time: "10:30-11:00",
+        time: "10:30",
         memo: "モバイルオーダー"
       },
       dinner:{
         name: "ニューヨーク・デリ",
-        time: "18:30頃",
+        time: "18:30",
         memo: "モバイルオーダー、DPA席に入場次第食事"
       },
     },
@@ -78,12 +78,12 @@ class DiagnosisService
       },
       lunch:{
         name: "スナグリーダックリング",
-        time: "10:30-11:00",
+        time: "10:30",
         memo: "モバイルオーダー"
       },
       dinner:{
         name: "ザンビーニ・ブラザーズ・リストランテ",
-        time: "16:30-17:00",
+        time: "16:30",
         memo: "モバイルオーダー"
       },
     },
@@ -107,12 +107,12 @@ class DiagnosisService
       },
       lunch:{
         name: "スナグリーダックリング",
-        time: "10:30-11:00",
+        time: "10:30",
         memo: "モバイルオーダー"
       },
       dinner:{
         name: "ザンビーニ・ブラザーズ・リストランテ",
-        time: "16:30-17:00",
+        time: "16:30",
         memo: "モバイルオーダー"
       },
     },
@@ -137,12 +137,12 @@ class DiagnosisService
       },
       lunch:{
         name: "セバスチャンのカプリソキッチン",
-        time: "10:30-11:00",
+        time: "10:30",
         memo: "モバイルオーダー"
       },
       dinner:{
         name: "ニューヨーク・デリ",
-        time: "18:30頃",
+        time: "18:30",
         memo: "モバイルオーダー、DPA席に入場次第食事"
       },
     },
@@ -166,12 +166,12 @@ class DiagnosisService
       },
       lunch:{
         name: "セバスチャンのカプリソキッチン",
-        time: "10:30-11:00",
+        time: "10:30",
         memo: "モバイルオーダー"
       },
       dinner:{
         name: "ニューヨーク・デリ",
-        time: "18:30頃",
+        time: "18:30",
         memo: "モバイルオーダー、DPA席に入場次第食事"
       },
     },
@@ -195,12 +195,12 @@ class DiagnosisService
       },
       lunch:{
         name: "セバスチャンのカプリソキッチン",
-        time: "10:30-11:00",
+        time: "10:30",
         memo: "モバイルオーダー"
       },
       dinner:{
         name: "ザンビーニ・ブラザーズ・リストランテ",
-        time: "16:30-17:00",
+        time: "16:30",
         memo: "モバイルオーダー"
       },
     },
@@ -224,12 +224,12 @@ class DiagnosisService
       },
       lunch:{
         name: "セバスチャンのカプリソキッチン",
-        time: "10:30-11:00",
+        time: "10:30",
         memo: "モバイルオーダー"
       },
       dinner:{
         name: "ザンビーニ・ブラザーズ・リストランテ",
-        time: "16:30-17:00",
+        time: "16:30",
         memo: "モバイルオーダー"
       },
     },
@@ -254,12 +254,12 @@ class DiagnosisService
       },
       lunch:{
         name: "ニューヨーク・デリ",
-        time: "10:00頃",
+        time: "10:00",
         memo: "モバイルオーダー、場所取りしながらパレードを待つ"
       },
       dinner:{
         name: "ドックサイドダイナー",
-        time: "18:30頃",
+        time: "18:30",
         memo: "モバイルオーダー、DPA席に入場次第食事"
       },
     },
@@ -283,12 +283,12 @@ class DiagnosisService
       },
       lunch:{
         name: "ニューヨーク・デリ",
-        time: "10:00頃",
+        time: "10:00",
         memo: "モバイルオーダー、場所取りしながらパレードを待つ"
       },
       dinner:{
         name: "ドックサイドダイナー",
-        time: "18:30頃",
+        time: "18:30",
         memo: "モバイルオーダー、DPA席に入場次第食事"
       },
     },
@@ -312,12 +312,12 @@ class DiagnosisService
       },
       lunch:{
         name: "ニューヨーク・デリ",
-        time: "10:00頃",
+        time: "10:00",
         memo: "モバイルオーダー、場所取りしながらパレードを待つ"
       },
       dinner:{
         name: "ドックサイドダイナー",
-        time: "17:00頃",
+        time: "17:00",
         memo: "モバイルオーダー、場所取りしながらパレードを待つ"
       },
     },
@@ -338,12 +338,12 @@ class DiagnosisService
       },
       lunch:{
         name: "ニューヨーク・デリ",
-        time: "10:00頃",
+        time: "10:00",
         memo: "モバイルオーダー、場所取りしながらパレードを待つ"
       },
       dinner:{
         name: "ドックサイドダイナー",
-        time: "17:00頃",
+        time: "17:00",
         memo: "モバイルオーダー、場所取りしながらパレードを待つ"
       },
     },
@@ -368,12 +368,12 @@ class DiagnosisService
       },
       lunch:{
         name: "ニューヨーク・デリ",
-        time: "10:00頃",
+        time: "10:00",
         memo: "モバイルオーダー、場所取りしながらパレードを待つ"
       },
       dinner:{
         name: "ドックサイドダイナー",
-        time: "18:30頃",
+        time: "18:30",
         memo: "モバイルオーダー、DPA席に入場次第食事"
       },
     },
@@ -397,12 +397,12 @@ class DiagnosisService
       },
       lunch:{
         name: "ニューヨーク・デリ",
-        time: "10:00頃",
+        time: "10:00",
         memo: "モバイルオーダー、場所取りしながらパレードを待つ"
       },
       dinner:{
         name: "ドックサイドダイナー",
-        time: "18:30頃",
+        time: "18:30",
         memo: "モバイルオーダー、DPA席に入場次第食事"
       },
     },
@@ -426,12 +426,12 @@ class DiagnosisService
       },
       lunch:{
         name: "ニューヨーク・デリ",
-        time: "10:00頃",
+        time: "10:00",
         memo: "モバイルオーダー、場所取りしながらパレードを待つ"
       },
       dinner:{
         name: "ドックサイドダイナー",
-        time: "17:00頃",
+        time: "17:00",
         memo: "モバイルオーダー、場所取りしながらパレードを待つ"
       },
     },
@@ -455,12 +455,12 @@ class DiagnosisService
       },
       lunch:{
         name: "ニューヨーク・デリ",
-        time: "10:00頃",
+        time: "10:00",
         memo: "モバイルオーダー、場所取りしながらパレードを待つ"
       },
       dinner:{
         name: "ドックサイドダイナー",
-        time: "17:00頃",
+        time: "17:00",
         memo: "モバイルオーダー、場所取りしながらパレードを待つ"
       },
     },
