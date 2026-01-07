@@ -39,42 +39,31 @@ https://funflow-46193.onrender.com/
 - DPA購入の優先度など、より詳細な条件を考慮したおすすめの流れ作成  
 - 待ち時間を予測し、それを踏まえた行動の流れの作成  
 - ユーザー間でプランの共有機能の実装
+
+## 工夫した点・特徴
+
+- **「効率よく回る」ではなく「ちゃんと楽しむ」を優先**  
+  FunFlowはタイムアタックのように効率を追求するアプリではない
+  どのパターンのおすすめの流れでも、食事を2回確保するなど、しっかり休憩しながら楽しむことを重視して設計している
+
+- **自動提案＋自由編集による柔軟性**  
+  おすすめの流れを自動で作成した後も、ユーザーは自由に行動ステップを追加できる
+  「システムによる提案」と「自分での調整」を両立し、体験の最適化を支援する
+
+- **安全・誤操作防止の工夫**  
+  - 削除時には注意メッセージを表示し、誤操作を防止する
+  - ボタンの色分けにより、重要操作が視覚的にわかりやすくなる。 
+  - DPA取得など特定行動時には、対象のアトラクションやパレード以外は選択できない仕組みを実装している
+
+- **複雑条件を整理した効率的な実装**  
+  - 条件分岐は最低限の16パターンに整理
+  - バリデーションやActiveHashを活用し、順序や対象の不整合を防止
+
+- **UX・UIの工夫**  
+  - 行動タイプ・対象・時間・メモなどの入力はプルダウンやカレンダーで簡単操作できる
+  - 説明文や注意書きを丁寧に配置し、初めての人でも迷わず操作できる  
+  - アプリ操作とパーク内の周り方を区別して表示し、体験イメージを直感的に理解できるようにしている
   
 ## データベース設計
 [![Image from Gyazo](https://i.gyazo.com/5250c2fba91d65408c081e33c1887942.png)](https://gyazo.com/5250c2fba91d65408c081e33c1887942)
 
-
-### usersテーブル
-| Column             | Type   | Options                   |
-| ------------------ | ------ | ------------------------- |
-| nickname           | string | null: false               |
-| email              | string | null: false, unique: true |
-| encrypted_password | string | null: false               |
-
-#### Association
-- has_many   :plans
-
-### plansテーブル（アトラクション・ショー・パレード）
-| Column             | Type    | Options                  |
-| ------------------ | ------- | -------------------------|
-| user_id            | integer | null: false              |
-| park_id            | integer | null: false              | # 1:ランド, 2:シー（ActiveHash）
-| date               | date    | null: false              |
-
-#### Association
-- belongs_to :user
-- has_many   :plan_steps
-
-
-### plan_stepsテーブル
-| Column             | Type    | Options                  |
-| ------------------ | ------- | -------------------------|
-| plan_id            | integer | null: false              |
-| step_number        | integer | null: false              | # 行動の順番
-| action_type_id     | integer | null: false              | # アトラクションに乗る,ショーを見る,食事,DPA取得など（ActiveHash）
-| target_id          | integer | null: false              | # Attraction, Show, Parade, Restaurant のID（ActiveHash）
-| time               | time    |                          | # 実施時刻（任意）
-| note               | text    |                          | # 調整メモ（任意）
-
-#### Association
-- belongs_to :plan

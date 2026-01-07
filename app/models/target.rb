@@ -45,7 +45,6 @@ class Target < ActiveHash::Base
     { id: 40, name: 'リストランテ・ディ・カナレット', category: 'restaurant', area: 'mediterranean_harbor' },
     { id: 41, name: 'リフレスコス', category: 'restaurant', area: 'mediterranean_harbor', mobile_order: true },
     { id: 42, name: 'ポップコーンワゴン（ソアリン前）', category: 'restaurant', area: 'mediterranean_harbor', pp: true },
-    #
     { id: 43, name: 'S.S.コロンビア・ダイニングルーム', category: 'restaurant', area: 'american_waterfront' },
     { id: 44, name: 'ケープコッド・クックオフ', category: 'restaurant', area: 'american_waterfront', mobile_order: true },
     { id: 45, name: 'ケープコッド・クックオフ（ショーレストラン）', category: 'restaurant', area: 'american_waterfront' },
@@ -67,13 +66,11 @@ class Target < ActiveHash::Base
     { id: 61, name: 'ポップコーンワゴン（リドアイル前）', category: 'restaurant', area: 'american_waterfront' },
     { id: 62, name: 'ポップコーンワゴン（リバティ・ランディング・ダイナー前）', category: 'restaurant', area: 'american_waterfront' },
     { id: 63, name: '', category: 'restaurant', area: 'american_waterfront' },
-    #
     { id: 64, name: 'シーサイドスナック', category: 'restaurant', area: 'port_discovery' },
     { id: 65, name: 'ブリーズウェイ・バイツ', category: 'restaurant', area: 'port_discovery' },
     { id: 66, name: 'ベイサイド・テイクアウト', category: 'restaurant', area: 'port_discovery' },
     { id: 67, name: 'ホライズンベイ・レストラン', category: 'restaurant', area: 'port_discovery' },
     { id: 68, name: 'ポップコーンワゴン（アクアトピア横）', category: 'restaurant', area: 'port_discovery' },
-    #
     { id: 69, name: 'エクスペディション・イート', category: 'restaurant', area: 'lost_river_delta' },
     { id: 70, name: 'トロピック・アルズ', category: 'restaurant', area: 'lost_river_delta' },
     { id: 71, name: 'ミゲルズ・エルドラド・キャンティーナ', category: 'restaurant', area: 'lost_river_delta', mobile_order: true },
@@ -81,22 +78,18 @@ class Target < ActiveHash::Base
     { id: 73, name: 'ユカタン・ベースキャンプ・グリル（テイクアウトカウンター）', category: 'restaurant', area: 'lost_river_delta', mobile_order: true },
     { id: 74, name: 'ロストリバークックハウス', category: 'restaurant', area: 'lost_river_delta' },
     { id: 75, name: 'ポップコーンワゴン（ハンバーステージ横）', category: 'restaurant', area: 'lost_river_delta' },
-    #
     { id: 76, name: 'アレンデール・ロイヤルバンケット', category: 'restaurant', area: 'fantasy_springs', mobile_order: true },
     { id: 77, name: 'オーケンのオーケーフード', category: 'restaurant', area: 'fantasy_springs' },
     { id: 78, name: 'スナグリーダックリング', category: 'restaurant', area: 'fantasy_springs', mobile_order: true },
     { id: 79, name: 'ルックアウト・クックアウト', category: 'restaurant', area: 'fantasy_springs', mobile_order: true },
     { id: 80, name: 'ポップコーンワゴン（フェアリー・ティンカーベルのビジーバギー前）', category: 'restaurant', area: 'fantasy_springs' },
-    #
     { id: 81, name: 'オープンセサミ', category: 'restaurant', area: 'arabian_coast' },
     { id: 82, name: 'カスバ・フードコート', category: 'restaurant', area: 'arabian_coast', mobile_order: true },
     { id: 83, name: 'サンタンズ・オアシス', category: 'restaurant', area: 'arabian_coast' },
     { id: 84, name: 'ポップコーンワゴン（アラビアンコースト前）', category: 'restaurant', area: 'arabian_coast' },
-    #
     { id: 85, name: 'セバスチャンのカプリソキッチン', category: 'restaurant', area: 'mermaid_lagoon', mobile_order: true },
     { id: 86, name: 'ポップコーンワゴン（コーヴ・オブ・ワンダー前）', category: 'restaurant', area: 'mermaid_lagoon' },
     { id: 87, name: 'ポップコーンワゴン（スカットルのスクーター前）', category: 'restaurant', area: 'mermaid_lagoon' },
-    #
     { id: 88, name: 'ヴォルケイニア・レストラン', category: 'restaurant', area: 'mysterious_island' },
     { id: 89, name: 'ノーチラスギャレー', category: 'restaurant', area: 'mysterious_island', mobile_order: true },
     { id: 90, name: 'リフレッシュメント・ステーション', category: 'restaurant', area: 'mysterious_island' },
@@ -110,7 +103,7 @@ class Target < ActiveHash::Base
     { id: 94, name: 'スカイ・フル・オブ・カラーズ（花火）', category: 'parade', area: 'park_wide' },
     { id: 95, name: 'ダッフィー＆フレンズのカラフルハピネスジャーニー', category: 'parade', area: 'park_wide' },
     { id: 96, name: 'ニューイヤーズ・グリーティング', category: 'parade', area: 'mediterranean_harbor' },
-    { id: 97, name: 'ビリーブ！～シー・オブ・ドリームス～', category: 'parade', area: 'mediterranean_harbor' },
+    { id: 97, name: 'ビリーブ！～シー・オブ・ドリームス～', category: 'parade', area: 'mediterranean_harbor' }
 
   ]
 
@@ -133,6 +126,4 @@ class Target < ActiveHash::Base
   def mobile_order
     self[:mobile_order] || false
   end
-
-
 end

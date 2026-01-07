@@ -16,5 +16,4 @@ class DiagnosesController < ApplicationController
 
     redirect_to preview_plans_path(plan_id: params[:plan_id])
   end
-
 end

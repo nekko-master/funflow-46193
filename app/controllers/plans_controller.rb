@@ -24,7 +24,7 @@ class PlansController < ApplicationController
 
   def preview
     preview_data = session[:diagnosis_preview]
-    return redirect_to root_path, alert: "診断データがありません" unless preview_data
+    return redirect_to root_path, alert: '診断データがありません' unless preview_data
 
     # 保存前のプランを作成
     @plan = Plan.new(
@@ -33,27 +33,26 @@ class PlansController < ApplicationController
     )
 
     # プレビュー用の park 名を安全に取得
-    @park_name = @plan.park&.name || "ディズニーシー"
+    @park_name = @plan.park&.name || 'ディズニーシー'
 
     # plan_steps を作成（DB 保存はしない）
     @plan_steps = preview_data.map do |step|
       PlanStep.new(
-        step_number: step["step_number"],
-        action_type: ActionType.find_by_key!(step["action_type"]),
-        target: Target.find_by!(name: step["target_name"]),
-        note: step["note"],
-        time: step["time"]
+        step_number: step['step_number'],
+        action_type: ActionType.find_by_key!(step['action_type']),
+        target: Target.find_by!(name: step['target_name']),
+        note: step['note'],
+        time: step['time']
       )
     end
   end
-
 
   # =====================
   # プレビューから保存
   # =====================
   def save_from_preview
     preview_data = session[:diagnosis_preview]
-    return redirect_to root_path, alert: "診断データがありません" unless preview_data
+    return redirect_to root_path, alert: '診断データがありません' unless preview_data
 
     plan = current_user.plans.find(params[:plan_id])
 
@@ -64,17 +63,17 @@ class PlansController < ApplicationController
       # プレビュー内容を保存
       preview_data.each do |step|
         plan.plan_steps.create!(
-          step_number: step["step_number"],
-          action_type_id: ActionType.find_by_key!(step["action_type"]).id,
-          target_id: Target.find_by!(name: step["target_name"]).id,
-          note: step["note"],
-          time: step["time"]
+          step_number: step['step_number'],
+          action_type_id: ActionType.find_by_key!(step['action_type']).id,
+          target_id: Target.find_by!(name: step['target_name']).id,
+          note: step['note'],
+          time: step['time']
         )
       end
     end
 
     session.delete(:diagnosis_preview)
-    redirect_to plan_path(plan), notice: "おすすめの流れを保存しました"
+    redirect_to plan_path(plan), notice: 'おすすめの流れを保存しました'
   end
 
   def show
@@ -84,7 +83,7 @@ class PlansController < ApplicationController
   def destroy
     plan = current_user.plans.find(params[:id])
     plan.destroy
-    redirect_to plans_path, notice: "プランを削除しました"
+    redirect_to plans_path, notice: 'プランを削除しました'
   end
 
   def edit
@@ -94,7 +93,7 @@ class PlansController < ApplicationController
   def update
     @plan = current_user.plans.find(params[:id])
     if @plan.update(plan_params)
-      redirect_to plan_path(@plan), notice: "プランを更新しました"
+      redirect_to plan_path(@plan), notice: 'プランを更新しました'
     else
       render :edit, status: :unprocessable_entity
     end

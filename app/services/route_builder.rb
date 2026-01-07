@@ -33,7 +33,7 @@ class RouteBuilder
     step_number = append_step(steps, :first,          :ride, step_number)
     step_number = append_step(steps, :pp,             :pp, step_number)
     step_number = append_step(steps, :lunch,          :mobile_order, step_number, with_time: true)
-    step_number = append_step(steps, :dinner,         :mobile_order, step_number, with_time: true)
+    append_step(steps, :dinner, :mobile_order, step_number, with_time: true)
 
     steps
   end

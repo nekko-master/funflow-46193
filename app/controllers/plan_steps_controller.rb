@@ -27,7 +27,6 @@ class PlanStepsController < ApplicationController
 
   def edit
     @plan_step = @plan.plan_steps.find(params[:id])
-   
   end
 
   def update
@@ -35,7 +34,7 @@ class PlanStepsController < ApplicationController
     @plan_step = @plan.plan_steps.find(params[:id])
 
     if @plan_step.update(plan_step_params)
-      redirect_to plan_path(@plan), notice: "行動ステップを更新しました"
+      redirect_to plan_path(@plan), notice: '行動ステップを更新しました'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -62,8 +61,6 @@ class PlanStepsController < ApplicationController
     end
   end
 
-
-
   def create_manually
     @plan_step = @plan.plan_steps.build(plan_step_params)
 
@@ -74,12 +71,11 @@ class PlanStepsController < ApplicationController
     end
   end
 
-
   def create_from_diagnosis
     route_data = JSON.parse(params[:route_data])
 
     ActiveRecord::Base.transaction do
-      route_data.each_with_index do |(key, value), index|
+      route_data.each_with_index do |(_key, _value), index|
         @plan.plan_steps.create!(
           step_number: index + 1,
           action_type_id: action_type_id,
@@ -90,9 +86,8 @@ class PlanStepsController < ApplicationController
       end
     end
 
-    redirect_to plan_path(@plan), notice: "診断ルートを保存しました"
+    redirect_to plan_path(@plan), notice: '診断ルートを保存しました'
   end
-
 
   def format_value(value)
     if value.is_a?(Hash)
@@ -101,7 +96,6 @@ class PlanStepsController < ApplicationController
       value.to_s
     end
   end
-
 
   def plan_step_params
     params.require(:plan_step).permit(
