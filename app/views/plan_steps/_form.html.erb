@@ -1,16 +1,15 @@
 <%= form_with model: [@plan, @plan_step], local: true, id: "plan-step-form", class: "form-standard-width" do |f| %>
 
   <!-- 順番 -->
-  <div class="form-group">
-    <%= f.label :step_number, "順番", class: "form-label" %>
-    <%= f.number_field :step_number, class: "form-input form-input-width" %>
-  </div>
+  <%= f.hidden_field :step_number %>
+
 
   <!-- Stimulusターゲット -->
   <div
     data-controller="target-filter"
     data-target-filter-targets-value='<%= @targets.to_json %>'
     data-target-filter-actions-value='<%= ActionType.all.map { |a| { id: a.id, key: a.key.to_s, name: a.name } }.to_json %>'
+    data-target-filter-selected-target-id-value="<%= @plan_step.target_id %>"
   >
 
     <!-- 行動タイプ -->
@@ -23,6 +22,7 @@
         { prompt: "選択してください" },
         {
           class: "form-select form-input-width",
+          required: true,
           data: {
             "target-filter-target": "action",
             action: "change->target-filter#updateTargets"
@@ -35,9 +35,11 @@
     <div class="form-group">
       <%= f.label :target_id, "対象", class: "form-label" %>
       <%= f.select :target_id,
-        [],
+        (@plan_step.persisted? ? Target.all.map { |t| [t.name, t.id] } : []),
         { prompt: "選択してください" },
-        { class: "form-select form-input-width", data: { "target-filter-target": "targetSelect" } }
+        { class: "form-select form-input-width",
+          required: true,
+          data: { "target-filter-target": "targetSelect" } }
       %>
     </div>
 

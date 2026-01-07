@@ -6,6 +6,9 @@
       まずは、行く日とパークを選びましょう。<br>
       楽しい一日の流れづくりは、ここから始まります。
     </p>
+    <span class="form-note">
+      ※ パレードやショーの公演時間の発表状況により、現在はアプリの対象期間を限定しています。
+    </span>
   </header>
 
   <main class="plan-new-content">
@@ -21,12 +24,21 @@
                 ["ディズニーシー", 2]
               ]),
               { prompt: "選択してください" },
-              class: "form-select" %>
+              class: "form-select",
+              required: true %>
         </div>
 
         <div class="form-group">
           <%= f.label :date, "行く日" %>
-          <%= f.date_field :date, class: "form-input" %>
+          <%= f.date_field :date, 
+              class: "form-input",
+              required: true,
+              min: "2026-01-01",
+              max: "2026-03-31",
+              data: {
+                controller: "date-picker",
+                action: "click->date-picker#open"
+              } %>
         </div>
 
         <div class="form-actions">

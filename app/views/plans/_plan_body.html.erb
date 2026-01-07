@@ -89,7 +89,7 @@
 
       <%= link_to "プランを削除",
           plan_path(@plan),
-          data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" },
+          data: { turbo_method: :delete, turbo_confirm: "このプランを削除すると、登録されている行動ステップもすべて削除されます。本当に削除しますか？" },
           class: "tertiary-button is-danger" %>
     <% else %>
       <%= button_to "この内容で保存する",

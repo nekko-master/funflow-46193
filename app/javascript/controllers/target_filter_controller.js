@@ -4,7 +4,8 @@ export default class extends Controller {
   static targets = ["action", "targetSelect"]
   static values = {
     targets: Array,
-    actions: Array
+    actions: Array,
+    selectedTargetId: Number
   }
 
   connect() {
@@ -12,11 +13,14 @@ export default class extends Controller {
   }
 
   updateTargets() {
+    if (!this.hasActionTarget) return
+    if (!this.actionTarget.value) return
+
     const actionTypeId = this.actionTarget.value
     let filtered = this.targetsValue
 
     const action = this.actionsValue.find(
-      a => String(a.id) === actionTypeId
+      a => String(a.id) === String(actionTypeId)
     )
 
     if (!action) {
@@ -26,9 +30,7 @@ export default class extends Controller {
 
     switch (action.key) {
       case "ride":
-        filtered = filtered.filter(t =>
-          t.category === "attraction"
-        )
+        filtered = filtered.filter(t => t.category === "attraction")
         break
 
       case "dpa":
@@ -71,12 +73,20 @@ export default class extends Controller {
     this.renderOptions(filtered)
   }
 
+
   renderOptions(targets) {
+    const selectedId = this.selectedTargetIdValue
+
     this.targetSelectTarget.innerHTML =
       `<option value="">選択してください</option>` +
-      targets.map(t =>
-        `<option value="${t.id}">${t.name}</option>`
-      ).join("")
+      targets.map(t => {
+        const selected =
+          selectedId && String(t.id) === String(selectedId)
+            ? " selected"
+            : ""
+
+        return `<option value="${t.id}"${selected}>${t.name}</option>`
+      }).join("")
   }
 
 }
