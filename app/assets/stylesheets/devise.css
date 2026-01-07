@@ -1,0 +1,91 @@
+/* ===============================
+   Devise: Login / Signup / Password
+================================ */
+
+.devise-page {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 80px 24px 64px;
+}
+
+.devise-hero {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.devise-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.devise-lead {
+  font-size: 16px;
+  color: #374151;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.devise-form-card {
+  padding: 32px 28px;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.devise-form-group {
+  margin-bottom: 24px;
+}
+
+.devise-form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.devise-form-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.devise-form-input:focus {
+  outline: none;
+  border-color: #0377cb;
+  box-shadow: 0 0 0 3px rgba(3, 119, 203, 0.15);
+}
+
+.devise-form-actions {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.devise-primary-button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #0377cb;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.devise-primary-button:hover {
+  background-color: #025aa3;
+}
+
+.devise-secondary-button {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #0377cb;
+  text-decoration: underline;
+  cursor: pointer;
+}
