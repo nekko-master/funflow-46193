@@ -28,6 +28,7 @@ https://funflow-46193.onrender.com/
 私はディズニーリゾートに年に5回以上通っており、その際に朝一で取得するパスや回る順序などを簡単なメモにまとめている。  
 このメモのおかげで、当日は迷わず行動でき、一緒に入園した方からは「ディズニーでゆっくり食事できたのは初めて」
 「たくさんアトラクションに乗れた」「夜まで疲れなかった」といった声をもらった。  
+<<<<<<< HEAD
 
 現在のディズニーリゾートはルールが複雑で難しいという印象を持つ人も多いが、入園者数のコントロールやアプリでのパス取得により、
 以前よりも快適に楽しめる環境になっている。  
@@ -39,45 +40,22 @@ https://funflow-46193.onrender.com/
 - DPA購入の優先度など、より詳細な条件を考慮したおすすめの流れ作成  
 - 待ち時間を予測し、それを踏まえた行動の流れの作成  
 - ユーザー間でプランの共有機能の実装
+=======
+>>>>>>> d94164e45752852e75835ce88c5c7d5be45d6612
 
+現在のディズニーリゾートはルールが複雑で難しいという印象を持つ人も多いが、入園者数のコントロールやアプリでのパス取得により、
+以前よりも快適に楽しめる環境になっている。  
 
+より多くの人がパークを存分に楽しめるよう、行動計画を立てる手助けを目的として、このアプリを開発した。
+
+## 今後の実装予定の機能
+- ディズニーランドを対象に拡張する  
+- DPA購入の優先度など、より詳細な条件を考慮したおすすめの流れ作成  
+- 待ち時間を予測し、それを踏まえた行動の流れの作成  
+- ユーザー間でプランの共有機能の実装
+  
 ## データベース設計
 [![Image from Gyazo](https://i.gyazo.com/5250c2fba91d65408c081e33c1887942.png)](https://gyazo.com/5250c2fba91d65408c081e33c1887942)
 
-### usersテーブル
-| Column             | Type   | Options                   |
-| ------------------ | ------ | ------------------------- |
-| nickname           | string | null: false               |
-| email              | string | null: false, unique: true |
-| encrypted_password | string | null: false               |
-
-#### Association
-- has_many   :plans
-
-
-### plansテーブル（アトラクション・ショー・パレード）
-| Column             | Type    | Options                  |
-| ------------------ | ------- | -------------------------|
-| user_id            | integer | null: false              |
-| park_id            | integer | null: false              | # 1:ランド, 2:シー（ActiveHash）
-| date               | date    | null: false              |
-
-#### Association
-- belongs_to :user
-- has_many   :plan_steps
-
-
-### plan_stepsテーブル
-| Column             | Type    | Options                  |
-| ------------------ | ------- | -------------------------|
-| plan_id            | integer | null: false              |
-| step_number        | integer | null: false              | # 行動の順番
-| action_type_id     | integer | null: false              | # アトラクションに乗る,ショーを見る,食事,DPA取得など（ActiveHash）
-| target_id          | integer | null: false              | # Attraction, Show, Parade, Restaurant のID（ActiveHash）
-| time               | time    |                          | # 実施時刻（任意）
-| note               | text    |                          | # 調整メモ（任意）
-
-#### Association
-- belongs_to :plan
 
 
