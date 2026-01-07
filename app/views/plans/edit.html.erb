@@ -1,5 +1,59 @@
-<%= form_with model: @plan do |f| %>
-  <%= f.collection_select :park_id, Park.all, :id, :name %>
-  <%= f.date_field :date %>
-  <%= f.submit "更新する" %>
-<% end %>
+<div class="plan-edit-page">
+
+  <header class="plan-new-hero">
+    <h1 class="plan-new-title">プランを編集する</h1>
+    <p class="plan-new-lead">
+      日付やパークを変更できます。<br>
+      楽しい一日の流れづくりを調整しましょう。
+    </p>
+    <span class="form-note">
+      ※ パレードやショーの公演時間の発表状況により、現在はアプリの対象期間を限定しています。
+    </span>
+  </header>
+
+  <main class="plan-new-content">
+
+    <div class="plan-form-card">
+      <%= form_with model: @plan, local: true do |f| %>
+
+        <div class="form-group">
+          <%= f.label :park_id, "行くパーク" %>
+          <%= f.select :park_id,
+              options_for_select([
+                ["ディズニーランド（後日実装）", 1, { disabled: true }],
+                ["ディズニーシー", 2]
+              ], selected: @plan.park_id),
+              { prompt: "選択してください" },
+              class: "form-select",
+              required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :date, "行く日" %>
+          <%= f.date_field :date, 
+              class: "form-input",
+              required: true,
+              min: "2026-01-01",
+              max: "2026-03-31",
+              value: @plan.date,
+              data: {
+                controller: "date-picker",
+                action: "click->date-picker#open"
+              } %>
+        </div>
+
+        <div class="form-actions">
+          <div class="action-item">
+            <%= f.submit "プランを更新する", class: "primary-button" %>
+          </div>
+          <div class="action-item" style="margin-top: 8px;">
+            <%= link_to "キャンセル", plan_path(@plan), class: "tertiary-button" %>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+
+  </main>
+
+</div>

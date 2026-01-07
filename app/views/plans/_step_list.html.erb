@@ -1,6 +1,8 @@
 <section class="plan-steps-subsection">
   <h3 class="subsection-title"><%= title %></h3>
-  <p class="subsection-description"><%= description %></p>
+  <p class="subsection-description">
+    <%= simple_format(description) %>
+  </p>
 
   <ol class="plan-steps">
     <% steps.each_with_index do |step, index| %>
@@ -35,6 +37,7 @@
                 <%= link_to "編集",
                             edit_plan_plan_step_path(@plan, step),
                             class: "secondary-button" %>
+              
                 <%= link_to "削除",
                   plan_plan_step_path(@plan, step),
                   method: :delete,

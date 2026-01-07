@@ -26,10 +26,16 @@
       <% if @plan.plan_steps.any? %>
         <%= link_to "おすすめの流れを作り直す／編集する",
             new_diagnosis_path(plan_id: @plan.id),
-            class: "primary-button is-secondary" %>
+            class: "primary-button is-secondary",
+            data: {
+              turbo_confirm: "この操作を行うと、手動で追加した行動は削除されます。おすすめの流れを作り直しますか？"
+            } %>
 
         <p class="action-note">
           もう一度診断して、このプランの流れを作り直せます
+        </p>
+        <p class="form-note">
+          ※ 手動で追加した行動は、流れを作り直すと上書きされます
         </p>
       <% else %>
         <%= link_to "おすすめの流れを作る",
@@ -53,15 +59,24 @@
       <%= render "step_list",
           steps: steps.select { |s| %i[dpa pp mobile_order entry].include?(s.action_type.key) },
           title: "アプリ操作",
-          description: "入園後や空き時間に、公式アプリで取得・予約しておく行動です。待ち時間を減らすため、優先的に実施しましょう。",
+          description: "入園後に、公式アプリで取得・予約しておく行動です。
+                        待ち時間を減らすため、できるだけ早めに実施しましょう。
+
+                        おすすめの流れでは、最初に取得するパスや、モバイルオーダーの**受け取り時間（利用時間）**を提案しています。
+                        ※ 注文や予約の操作は、受け取り時間より前に公式アプリで行ってください。
+
+                        次にパスを取得できる時間は、最初のパス取得後に公式アプリで確認できます。
+                        二つ目以降に優先したいパスがある場合は、自由に行動を追加して調整してみてください。",
           show_edit_button: @plan.persisted? %>
 
       <%= render "step_list",
           steps: steps.reject { |s| %i[dpa pp mobile_order entry].include?(s.action_type.key) },
           title: "周り方",
           description: "実際にパーク内を移動しながら体験する順番のイメージです。
-                        診断では最初に並ぶのがおすすめのアトラクションを提案しています。
-                        その後は、空き時間や移動距離を見ながら自由に予定を追加してみてください。",
+                        おすすめの流れでは、最初に並ぶのがおすすめのアトラクションを提案しています。
+
+                        その後は、空き時間や移動距離を見ながら、自由に予定を追加してみてください。
+                        迷ったときは、近くのアトラクションや、レストランへ向かう途中で立ち寄れる施設を探してみましょう。",
           show_edit_button: @plan.persisted? %>
 
     <% else %>

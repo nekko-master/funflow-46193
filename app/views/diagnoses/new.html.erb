@@ -79,8 +79,15 @@
 
     <!-- Actions -->
     <div class="diagnosis-actions">
-      <%= f.submit "診断する", class: "primary-button" %>
+      <div class="action-item">
+        <%= f.submit "おすすめの流れを作る", class: "primary-button" %>
+      </div>
+
+      <div class="action-item" style="margin-top: 8px;">
+        <%= link_to "戻る", plan_path(@plan), class: "tertiary-button" %>
+      </div>
     </div>
+    
 
   <% end %>
 </div>
