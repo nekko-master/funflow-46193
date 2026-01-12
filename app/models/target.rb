@@ -103,7 +103,7 @@ class Target < ActiveHash::Base
     { id: 94, name: 'スカイ・フル・オブ・カラーズ（花火）', category: 'parade', area: 'park_wide' },
     { id: 95, name: 'ダッフィー＆フレンズのカラフルハピネスジャーニー', category: 'parade', area: 'park_wide' },
     { id: 96, name: 'ニューイヤーズ・グリーティング', category: 'parade', area: 'mediterranean_harbor' },
-    { id: 97, name: 'ビリーブ！～シー・オブ・ドリームス～', category: 'parade', area: 'mediterranean_harbor' }
+    { id: 97, name: 'ビリーブ！～シー・オブ・ドリームス～', category: 'parade', area: 'mediterranean_harbor', dpa: true }
 
   ]
 
