@@ -464,3 +464,31 @@
 }
 
 
+/* ===============================
+   Plan Copy
+================================ */
+
+.copy-help {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #6B7280;
+}
+
+.plan-copy-text {
+  margin-top: 16px;
+  width: 100%;
+  min-height: 180px;
+
+  padding: 16px;
+  font-size: 13px;
+  line-height: 1.6;
+
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  background: #FFFFFF;
+  color: #111827;
+
+  resize: vertical;
+}
+
+

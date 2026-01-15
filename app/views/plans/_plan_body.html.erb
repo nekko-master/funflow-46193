@@ -1,4 +1,4 @@
-<div class="plan-page">
+<div class="plan-page" data-controller="copy">
 
   <!-- ===== プランヘッダー ===== -->
   <header class="plan-header">
@@ -97,6 +97,23 @@
       <%= link_to "手動で行動を追加",
           new_plan_plan_step_path(@plan),
           class: "secondary-button" %>
+      
+      <button
+        type="button"
+        class="secondary-button"
+        data-action="click->copy#copy">
+        プランをコピー
+      </button>
+
+      <p class="copy-help">
+        ※ コピーした内容は、LINEやメモにそのまま貼り付けできます
+      </p>
+
+      <textarea
+        class="plan-copy-text"
+        readonly
+        data-copy-target="source"><%= @plan_text %>
+      </textarea>
 
       <%= link_to "プランを編集",
           edit_plan_path(@plan),
@@ -118,6 +135,9 @@
     <% end %>
   </section>
 
+
+
+
   <!-- ===== ナビゲーション ===== -->
   <% if @plan.persisted? %>
     <nav class="plan-footer-nav">
@@ -126,5 +146,6 @@
           class: "tertiary-button" %>
     </nav>
   <% end %>
+
 
 </div>

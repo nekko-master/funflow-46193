@@ -31,6 +31,8 @@ https://funflow-46193.onrender.com/
 7. 必要に応じて、手動で追加の行動をプランに組み込むことが可能である
  [![Image from Gyazo](https://i.gyazo.com/221c89827ed597f06c74a5f3ea022c19.gif)](https://gyazo.com/221c89827ed597f06c74a5f3ea022c19)
  [![Image from Gyazo](https://i.gyazo.com/efd9979f4301425bc0dbb366014b9575.gif)](https://gyazo.com/efd9979f4301425bc0dbb366014b9575)
+8. 作成した流れをテキストとしてコピーし、当日のメモとして保存したり、同行者と共有することができる
+ [![Image from Gyazo](https://i.gyazo.com/9c6acfcc7295b45fc9942ea643e5b30e.gif)](https://gyazo.com/9c6acfcc7295b45fc9942ea643e5b30e)
 
 ## アプリケーションを作成した背景
 私はディズニーリゾートに年に5回以上通っており、その際に朝一で取得するパスや回る順序などを簡単なメモにまとめている。  

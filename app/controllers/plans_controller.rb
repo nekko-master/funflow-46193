@@ -78,6 +78,7 @@ class PlansController < ApplicationController
 
   def show
     @plan = current_user.plans.find(params[:id])
+    @plan_text = PlanTextBuilder.build(@plan)
   end
 
   def destroy
