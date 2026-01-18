@@ -20,13 +20,11 @@ class DiagnosisService
       },
       lunch: {
         name: 'スナグリーダックリング',
-        time: '10:30',
-        memo: 'モバイルオーダー'
+        memo: '10:30頃のモバイルオーダー'
       },
       dinner: {
         name: 'ニューヨーク・デリ',
-        time: '18:30',
-        memo: 'モバイルオーダー、DPA席に入場次第食事'
+        memo: '18:30頃のモバイルオーダー、DPA席に入場次第食事'
       }
     },
     # 2
@@ -49,13 +47,11 @@ class DiagnosisService
       },
       lunch: {
         name: 'スナグリーダックリング',
-        time: '10:30',
-        memo: 'モバイルオーダー'
+        memo: '10:30頃のモバイルオーダー'
       },
       dinner: {
         name: 'ニューヨーク・デリ',
-        time: '18:30',
-        memo: 'モバイルオーダー、DPA席に入場次第食事'
+        memo: '18:30頃のモバイルオーダー、DPA席に入場次第食事'
       }
     },
     # 3
@@ -78,13 +74,11 @@ class DiagnosisService
       },
       lunch: {
         name: 'スナグリーダックリング',
-        time: '10:30',
-        memo: 'モバイルオーダー'
+        memo: '10:30頃のモバイルオーダー'
       },
       dinner: {
         name: 'ザンビーニ・ブラザーズ・リストランテ',
-        time: '16:30',
-        memo: 'モバイルオーダー'
+        memo: '16:30頃のモバイルオーダー'
       }
     },
     # 4
@@ -107,13 +101,11 @@ class DiagnosisService
       },
       lunch: {
         name: 'スナグリーダックリング',
-        time: '10:30',
-        memo: 'モバイルオーダー'
+        memo: '10:30頃のモバイルオーダー'
       },
       dinner: {
         name: 'ザンビーニ・ブラザーズ・リストランテ',
-        time: '16:30',
-        memo: 'モバイルオーダー'
+        memo: '16:30頃のモバイルオーダー'
       }
     },
 
@@ -137,13 +129,11 @@ class DiagnosisService
       },
       lunch: {
         name: 'セバスチャンのカプリソキッチン',
-        time: '10:30',
-        memo: 'モバイルオーダー'
+        memo: '10:30頃のモバイルオーダー'
       },
       dinner: {
         name: 'ニューヨーク・デリ',
-        time: '18:30',
-        memo: 'モバイルオーダー、DPA席に入場次第食事'
+        memo: '18:30頃のモバイルオーダー、DPA席に入場次第食事'
       }
     },
     # 6
@@ -166,13 +156,11 @@ class DiagnosisService
       },
       lunch: {
         name: 'セバスチャンのカプリソキッチン',
-        time: '10:30',
-        memo: 'モバイルオーダー'
+        memo: '10:30頃のモバイルオーダー'
       },
       dinner: {
         name: 'ニューヨーク・デリ',
-        time: '18:30',
-        memo: 'モバイルオーダー、DPA席に入場次第食事'
+        memo: '18:30頃のモバイルオーダー、DPA席に入場次第食事'
       }
     },
     # 7
@@ -195,13 +183,11 @@ class DiagnosisService
       },
       lunch: {
         name: 'セバスチャンのカプリソキッチン',
-        time: '10:30',
-        memo: 'モバイルオーダー'
+        memo: '10:30頃のモバイルオーダー'
       },
       dinner: {
         name: 'ザンビーニ・ブラザーズ・リストランテ',
-        time: '16:30',
-        memo: 'モバイルオーダー'
+        memo: '16:30頃のモバイルオーダー'
       }
     },
     # 8
@@ -224,13 +210,11 @@ class DiagnosisService
       },
       lunch: {
         name: 'セバスチャンのカプリソキッチン',
-        time: '10:30',
-        memo: 'モバイルオーダー'
+        memo: '10:30頃のモバイルオーダー'
       },
       dinner: {
         name: 'ザンビーニ・ブラザーズ・リストランテ',
-        time: '16:30',
-        memo: 'モバイルオーダー'
+        memo: '16:30頃のモバイルオーダー'
       }
     },
 
@@ -254,13 +238,11 @@ class DiagnosisService
       },
       lunch: {
         name: 'ニューヨーク・デリ',
-        time: '10:00',
-        memo: 'モバイルオーダー、場所取りしながらパレードを待つ'
+        memo: '10:00頃のモバイルオーダー、場所取りしながらパレードを待つ'
       },
       dinner: {
         name: 'ドックサイドダイナー',
-        time: '18:30',
-        memo: 'モバイルオーダー、DPA席に入場次第食事'
+        memo: '18:30頃のモバイルオーダー、DPA席に入場次第食事'
       }
     },
     # 10
@@ -283,13 +265,11 @@ class DiagnosisService
       },
       lunch: {
         name: 'ニューヨーク・デリ',
-        time: '10:00',
-        memo: 'モバイルオーダー、場所取りしながらパレードを待つ'
+        memo: '10:00頃のモバイルオーダー、場所取りしながらパレードを待つ'
       },
       dinner: {
         name: 'ドックサイドダイナー',
-        time: '18:30',
-        memo: 'モバイルオーダー、DPA席に入場次第食事'
+        memo: '18:30頃のモバイルオーダー、DPA席に入場次第食事'
       }
     },
     # 11
@@ -312,13 +292,11 @@ class DiagnosisService
       },
       lunch: {
         name: 'ニューヨーク・デリ',
-        time: '10:00',
-        memo: 'モバイルオーダー、場所取りしながらパレードを待つ'
+        memo: '10:00頃のモバイルオーダー、場所取りしながらパレードを待つ'
       },
       dinner: {
         name: 'ドックサイドダイナー',
-        time: '17:00',
-        memo: 'モバイルオーダー、場所取りしながらパレードを待つ'
+        memo: '17:00頃のモバイルオーダー、場所取りしながらパレードを待つ'
       }
     },
     # 12
@@ -338,13 +316,11 @@ class DiagnosisService
       },
       lunch: {
         name: 'ニューヨーク・デリ',
-        time: '10:00',
-        memo: 'モバイルオーダー、場所取りしながらパレードを待つ'
+        memo: '10:00頃のモバイルオーダー、場所取りしながらパレードを待つ'
       },
       dinner: {
         name: 'ドックサイドダイナー',
-        time: '17:00',
-        memo: 'モバイルオーダー、場所取りしながらパレードを待つ'
+        memo: '17:00頃のモバイルオーダー、場所取りしながらパレードを待つ'
       }
     },
 
@@ -368,13 +344,11 @@ class DiagnosisService
       },
       lunch: {
         name: 'ニューヨーク・デリ',
-        time: '10:00',
-        memo: 'モバイルオーダー、場所取りしながらパレードを待つ'
+        memo: '10:00頃のモバイルオーダー、場所取りしながらパレードを待つ'
       },
       dinner: {
         name: 'ドックサイドダイナー',
-        time: '18:30',
-        memo: 'モバイルオーダー、DPA席に入場次第食事'
+        memo: '18:30頃のモバイルオーダー、DPA席に入場次第食事'
       }
     },
     # 14
@@ -397,13 +371,11 @@ class DiagnosisService
       },
       lunch: {
         name: 'ニューヨーク・デリ',
-        time: '10:00',
-        memo: 'モバイルオーダー、場所取りしながらパレードを待つ'
+        memo: '10:00頃のモバイルオーダー、場所取りしながらパレードを待つ'
       },
       dinner: {
         name: 'ドックサイドダイナー',
-        time: '18:30',
-        memo: 'モバイルオーダー、DPA席に入場次第食事'
+        memo: '18:30頃のモバイルオーダー、DPA席に入場次第食事'
       }
     },
     # 15
@@ -426,13 +398,11 @@ class DiagnosisService
       },
       lunch: {
         name: 'ニューヨーク・デリ',
-        time: '10:00',
-        memo: 'モバイルオーダー、場所取りしながらパレードを待つ'
+        memo: '10:00頃のモバイルオーダー、場所取りしながらパレードを待つ'
       },
       dinner: {
         name: 'ドックサイドダイナー',
-        time: '17:00',
-        memo: 'モバイルオーダー、場所取りしながらパレードを待つ'
+        memo: '17:00頃のモバイルオーダー、場所取りしながらパレードを待つ'
       }
     },
     # 16
@@ -455,19 +425,33 @@ class DiagnosisService
       },
       lunch: {
         name: 'ニューヨーク・デリ',
-        time: '10:00',
-        memo: 'モバイルオーダー、場所取りしながらパレードを待つ'
+        memo: '10:00頃のモバイルオーダー、場所取りしながらパレードを待つ'
       },
       dinner: {
         name: 'ドックサイドダイナー',
-        time: '17:00',
-        memo: 'モバイルオーダー、場所取りしながらパレードを待つ'
+        memo: '17:00頃のモバイルオーダー、場所取りしながらパレードを待つ'
       }
     }
   }
 
+  APP_OPERATION_TIME = {
+    early:  '09:00',
+    normal: '09:30'
+  }.freeze
+
   def self.call(focus:, morning:, dpa:, thrill:)
     key = [focus, morning, dpa, thrill].join('_')
-    PATTERNS[key]
+    pattern = PATTERNS[key]
+    return unless pattern
+
+    app_time = APP_OPERATION_TIME[morning.to_sym]
+
+    pattern.transform_values do |value|
+      if value.is_a?(Hash)
+        value.merge(time: app_time)
+      else
+        value
+      end
+    end
   end
 end
