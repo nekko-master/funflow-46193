@@ -29,10 +29,10 @@ class RouteBuilder
     steps = []
     step_number = 1
 
-    step_number = append_step(steps, :dpa_attraction, :dpa, step_number)
-    step_number = append_step(steps, :dpa_show,       :dpa, step_number) # 2026/1/12追加
-    step_number = append_step(steps, :first,          :ride, step_number)
-    step_number = append_step(steps, :pp,             :pp, step_number)
+    step_number = append_step(steps, :dpa_attraction, :dpa, step_number, with_time: true)
+    step_number = append_step(steps, :dpa_show,       :dpa, step_number, with_time: true) # 2026/1/12追加
+    step_number = append_step(steps, :first,          :ride, step_number, with_time: true)
+    step_number = append_step(steps, :pp,             :pp, step_number, with_time: true)
     step_number = append_step(steps, :lunch,          :mobile_order, step_number, with_time: true)
     append_step(steps, :dinner, :mobile_order, step_number, with_time: true)
 
